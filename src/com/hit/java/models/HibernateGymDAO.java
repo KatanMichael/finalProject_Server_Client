@@ -7,7 +7,7 @@ import org.hibernate.cfg.AnnotationConfiguration;
 
 import java.util.List;
 
-public class HibernateGymDAO implements com.models.IGymDAO
+public class HibernateGymDAO implements IGymDAO
 {
     private static HibernateGymDAO ourInstance = new HibernateGymDAO();
     private SessionFactory sessionFactory;

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="sun.plugin.com.Dispatcher" %><%--
   Created by IntelliJ IDEA.
   User: micha
   Date: 1/8/2019
@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title></title>
   </head>
   <body>
-  $END$
+
   </body>
 </html>
