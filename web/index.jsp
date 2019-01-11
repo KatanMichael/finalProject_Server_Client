@@ -13,7 +13,7 @@
   <body>
   <%
     getServletConfig().getServletContext()
-            .getRequestDispatcher("/Home.jsp").forward(request,response);
+            .getRequestDispatcher("/login.jsp").forward(request,response);
   %>
 
   </body>

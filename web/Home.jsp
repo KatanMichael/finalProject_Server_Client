@@ -1,3 +1,6 @@
+<%@ page import="com.hit.java.models.HibernateGymDAO" %>
+<%@ page import="com.hit.java.models.User" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 
@@ -33,6 +36,7 @@
   <body id="page-top">
 
     <!-- Navigation -->
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Gym_App</a>
@@ -400,7 +404,7 @@
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
                   <div id="success"></div>
-                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                  <button id="sendMessageButton"  class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
                 </div>
               </div>
             </form>
@@ -451,7 +455,12 @@
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                                <button id="sendMessageButton"
+                                        onclick="<%
+
+
+
+                                %>" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
                             </div>
                         </div>
                     </form>

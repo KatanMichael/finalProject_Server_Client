@@ -1,11 +1,13 @@
 package com.hit.java.models;
 
+import java.util.List;
+
 public interface IGymDAO
 {
     //Users
     public void getAllUsers(RequestListener listener);
-    public void getUserbyId(int queryId, RequestListener listener);
-    public void getUsersByName(String name, RequestListener listener);
+    public User getUserbyId(int queryId, RequestListener listener);
+    public List getUsersByName(String name, RequestListener listener);
     public void getUserByWeight(double weight, RequestListener listener);
     public void getUserByHeight(double height, RequestListener listener);
 

@@ -52,7 +52,7 @@ public class HibernateGymDAO implements IGymDAO
     }
 
     @Override
-    public void getUserbyId(int queryId, RequestListener listener)
+    public User getUserbyId(int queryId, RequestListener listener)
     {
         sessionFactory =  new AnnotationConfiguration().
                 configure().buildSessionFactory();
@@ -66,16 +66,18 @@ public class HibernateGymDAO implements IGymDAO
         if(list.size() == 0)
         {
             listener.onError("No User Found");
+            return null;
         }else
         {
-            System.out.println(list.size());
-            listener.onComplete(list.get(0));
+            User tempUser = (User) list.get(0);
+            return tempUser;
+
         }
 
     }
 
     @Override
-    public void getUsersByName(String name, RequestListener listener)
+    public List getUsersByName(String name, RequestListener listener)
     {
         sessionFactory = new AnnotationConfiguration().
                 configure().buildSessionFactory();
@@ -87,10 +89,12 @@ public class HibernateGymDAO implements IGymDAO
         if(list.size() == 0)
         {
             listener.onError("No User Found");
+            return null;
 
         }else
         {
             listener.onComplete(list);
+            return list;
         }
 
     }

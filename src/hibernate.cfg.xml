@@ -4,7 +4,7 @@
 <hibernate-configuration>
 <session-factory>
 		<property name="hibernate.connection.driver_class">
-			com.mysql.jdbc.Driver
+			com.mysql.cj.jdbc.Driver
 		</property>
 		<property name="hibernate.connection.url">
 			jdbc:mysql://db4free.net:3306/gymtest
@@ -15,6 +15,7 @@
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		<!-- Mapping files -->
+
 		<mapping resource="user.hbm.xml"/>
 		<mapping resource="activity.hbm.xml"/>
 
