@@ -24,7 +24,6 @@ public class MainServletController extends HttpServlet
     {
         String path = request.getPathInfo();
 
-
         if(path.equals("/signUp"))
         {
             User user = new User();
@@ -44,7 +43,35 @@ public class MainServletController extends HttpServlet
                 user.setPassword(userPassword);
             }
 
-            gymDAO.addNewUser(user);
+            gymDAO.getUsersByName(userName, new RequestListener() {
+                @Override
+                public void onComplete(Object o)
+                {
+                    List<User> userList = (List) o;
+
+                    {
+                        out.println("Username already taken");
+                    }
+                }
+
+                @Override
+                public void onError(String errorMsg)
+                {
+                    User tempUser = new User(userPassword,userName,1.1f,1.1f);
+                    gymDAO.addNewUser(tempUser);
+
+                    try {
+                        getServletContext().getRequestDispatcher("/Home.jsp")
+                                .forward(request,response);
+                    } catch (ServletException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            });
+
         }
 
         if(path.equals("/login"))
@@ -64,13 +91,19 @@ public class MainServletController extends HttpServlet
                             User tempUser = users.get(0);
                             out.println(tempUser);
 
-                            try {
-                                getServletContext().getRequestDispatcher("/Home.jsp")
-                                        .forward(request,response);
-                            } catch (ServletException e) {
-                                e.printStackTrace();
-                            } catch (IOException e) {
-                                e.printStackTrace();
+                            if(tempUser.getPassword().equals(userPassword))
+                            {
+                                try {
+                                    getServletContext().getRequestDispatcher("/Home.jsp")
+                                            .forward(request,response);
+                                } catch (ServletException e) {
+                                    e.printStackTrace();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }else
+                            {
+                                out.println("Wrong Password");
                             }
 
                         }
