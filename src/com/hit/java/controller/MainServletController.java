@@ -24,6 +24,12 @@ public class MainServletController extends HttpServlet
     {
         String path = request.getPathInfo();
 
+
+        if(path.equals("/personalStats"))
+        {
+
+        }
+
         if(path.equals("/signUp"))
         {
             User user = new User();
