@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<input type='checkbox' id='form-switch'>
+<%--<input type='checkbox' id='form-switch'>--%>
 <form id='login-form' action="${pageContext.request.contextPath}/controller/login" method='post'>
     <input type="text" name="loginUserName" placeholder="Username" required>
     <input type="password" name="loginPassword" placeholder="Password" required>

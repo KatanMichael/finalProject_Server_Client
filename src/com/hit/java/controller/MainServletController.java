@@ -24,12 +24,6 @@ public class MainServletController extends HttpServlet
     {
         String path = request.getPathInfo();
 
-
-        if(path.equals("/personalStats"))
-        {
-
-        }
-
         if(path.equals("/signUp"))
         {
             User user = new User();
@@ -66,7 +60,7 @@ public class MainServletController extends HttpServlet
                     User tempUser = new User(userPassword,userName,1.1f,1.1f);
 
                     try {
-                        getServletContext().getRequestDispatcher("/indexLogged.jsp")
+                        getServletContext().getRequestDispatcher("/personalProfile.jsp")
                                 .forward(request,response);
                     } catch (ServletException e) {
                         e.printStackTrace();
@@ -86,28 +80,23 @@ public class MainServletController extends HttpServlet
 
             gymDAO.getUsersByName(userName, new RequestListener() {
                 @Override
-                public void onComplete(Object o)
-                {
+                public void onComplete(Object o) {
                     List<User> users = (List) o;
-                    if(users != null)
-                    {
-                        if (users.size() > 0)
-                        {
+                    if (users != null) {
+                        if (users.size() > 0) {
                             User tempUser = users.get(0);
                             out.println(tempUser);
 
-                            if(tempUser.getPassword().equals(userPassword))
-                            {
+                            if (tempUser.getPassword().equals(userPassword)) {
                                 try {
                                     getServletContext().getRequestDispatcher("personalProfile.jsp")
-                                            .forward(request,response);
+                                            .forward(request, response);
                                 } catch (ServletException e) {
                                     e.printStackTrace();
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
-                            }else
-                            {
+                            } else {
                                 out.println("Wrong Password");
                             }
 
@@ -121,9 +110,55 @@ public class MainServletController extends HttpServlet
                     out.println(errorMsg);
                 }
             });
+        }
+        if(path.equals("/personalProfile"))
+        {
 
-            if(path.equals("/personalUpdate"))
-            {
+            String userName = request.getParameter("loginUserName");
+            String userPassword = request.getParameter("loginPassword");
+            String height = request.getParameter("height");
+            String weight = request.getParameter("weight");
+
+            gymDAO.getUsersByName(userName, new RequestListener() {
+                    @Override
+                    public void onComplete(Object o)
+                    {
+                        List<User> users = (List) o;
+                        if(users != null)
+                        {
+                            if (users.size() > 0)
+                            {
+                                User tempUser = users.get(0);
+                                tempUser.setHeight(Double.parseDouble(height));
+                                tempUser.setHeight(Double.parseDouble(weight));
+                                gymDAO.updateUser(tempUser);
+                                out.println(tempUser);
+
+                                if(tempUser.getPassword().equals(userPassword))
+                                {
+                                    try {
+                                        getServletContext().getRequestDispatcher("Home.jsp")
+                                                .forward(request,response);
+                                    } catch (ServletException e) {
+                                        e.printStackTrace();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }else
+                                {
+                                    out.println("failed to update");
+                                }
+
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(String errorMsg) {
+                        out.println(errorMsg);
+                    }
+                });
 
 
             }
@@ -131,7 +166,8 @@ public class MainServletController extends HttpServlet
 
         }
 
-    }
+
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
