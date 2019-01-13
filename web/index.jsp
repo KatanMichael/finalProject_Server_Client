@@ -13,9 +13,7 @@
   <body>
   <%
     getServletConfig().getServletContext()
-            .getRequestDispatcher("/login.jsp").forward(request,response);
-    getServletConfig().getServletContext()
-            .getRequestDispatcher("/personalStats.jsp").forward(request,response);
+            .getRequestDispatcher("/index_FirstHomeView.jsp").forward(request,response);
   %>
 
   </body>

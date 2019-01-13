@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
   <head>
 
     <meta charset="utf-8">
@@ -27,7 +27,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="css/agency.css" rel="stylesheet">
 
   </head>
 
@@ -57,7 +57,7 @@
               <a class="nav-link js-scroll-trigger" href="#team">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#signin">Sign In</a>
+              <a class="nav-link js-scroll-trigger" href="#userArea">Hello ...</a>
             </li>
           </ul>
         </div>
@@ -361,89 +361,34 @@
       </div>
     </section>
 
-    <!-- Log In / Sign Up -->
-    <section id="signin">
+    <!-- userArea -->
+    <section id="userArea">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Sign In</h2>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <form id="signinForm" name="sentMessage" novalidate="novalidate">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <a class="btn btn-block btn-social btn-facebook">
-                                        <span class="fab fa-facebook"></span> Sign in with Facebook (coming soon)
-                                    </a>
-                                </div>
-
-                                <div class="form-group">
-                                    <a class="btn btn-block btn-social btn-google">
-                                        <span class="fab fa-google"></span> Sign in with Google (coming soon)
-                                    </a>
-                                </div>
-
-                                <div class="form-group">
-                                    <a href="" class="btn btn-social btn-reddit" data-toggle="modal" data-target="#modalRegisterForm">
-                                        <span class="fas fa-address-card"></span> Sign Up
-                                    </a>
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-6" id="modalLoginForm" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="false">
-                                <div class="form-group">
-                                    <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="password" type="password" placeholder="Password *" required="required" data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-
-                            <div class="clearfix"></div>
-
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button id="signInButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Log In</button>
-                            </div>
-
-
-                          <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                  <div class="form-group">
-                                      <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
-                                      <p class="help-block text-danger"></p>
-                                  </div>
-                                  <div class="form-group">
-                                      <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
-                                      <p class="help-block text-danger"></p>
-                                  </div>
-                                  <div class="form-group">
-                                      <input class="form-control" id="password" type="password" placeholder="Password *" required="required" data-validation-required-message="Please enter your phone number.">
-                                      <p class="help-block text-danger"></p>
-                                  </div>
-                                <div class="clearfix"></div>
-                                <div class="col-lg-12 text-center">
-                                    <div id="success"></div>
-                                    <button id="signUpButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Sign Up</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-
-                        </div>
-                    </form>
+                    <h2 class="section-heading text-uppercase"> User Area - Your Info</h2>
                 </div>
             </div>
         </div>
+        <div class="" id="modalInfoForm" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="false">
+           <div class="form-group">
+             <input class="form-control" id="weight" type="text" placeholder="Your Weight *" required="required" data-validation-required-message="Please enter your weight.">
+             <p class="help-block text-danger"></p>
+           </div>
+           <div class="form-group">
+             <input class="form-control" id="height" type="text" placeholder="Your Height *" required="required" data-validation-required-message="Please enter your height.">
+             <p class="help-block text-danger"></p>
+           </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-lg-12 text-center">
+           <div id="success"></div>
+           <button id="signInButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Update Info</button>
+        </div>
+
+
     </section>
 
 
