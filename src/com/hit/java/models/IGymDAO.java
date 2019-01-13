@@ -14,6 +14,7 @@ public interface IGymDAO
     public void addNewUser(User user);
     public void deleteUser(String userName);
 
+    public void updateUser(User user);
     /*
     Keywords are "equal", "above", "below"
      */

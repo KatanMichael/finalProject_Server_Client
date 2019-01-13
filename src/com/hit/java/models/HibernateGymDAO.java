@@ -202,6 +202,25 @@ public class HibernateGymDAO implements IGymDAO
     }
 
     @Override
+    public void updateUser(User user)
+    {
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        session.update(user);
+        session.getTransaction().commit();
+
+        session.close();
+
+        sessionFactory.close();
+
+    }
+
+    @Override
     public void getActivityById(int id, RequestListener listener)
     {
 

@@ -54,7 +54,7 @@ public class MainServletController extends HttpServlet
                 public void onComplete(Object o)
                 {
                     List<User> userList = (List) o;
-
+                    if(userList.size() > 0)
                     {
                         out.println("Username already taken");
                     }
@@ -64,7 +64,6 @@ public class MainServletController extends HttpServlet
                 public void onError(String errorMsg)
                 {
                     User tempUser = new User(userPassword,userName,1.1f,1.1f);
-                    gymDAO.addNewUser(tempUser);
 
                     try {
                         getServletContext().getRequestDispatcher("/indexLogged.jsp")
@@ -100,7 +99,7 @@ public class MainServletController extends HttpServlet
                             if(tempUser.getPassword().equals(userPassword))
                             {
                                 try {
-                                    getServletContext().getRequestDispatcher("/Home.jsp")
+                                    getServletContext().getRequestDispatcher("personalProfile.jsp")
                                             .forward(request,response);
                                 } catch (ServletException e) {
                                     e.printStackTrace();
@@ -123,7 +122,11 @@ public class MainServletController extends HttpServlet
                 }
             });
 
+            if(path.equals("/personalUpdate"))
+            {
 
+
+            }
 
 
         }

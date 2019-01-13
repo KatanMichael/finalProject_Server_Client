@@ -397,11 +397,11 @@
 
                             <div class="col-md-6" id="modalLoginForm" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="false">
                                 <div class="form-group">
-                                    <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                                    <input class="form-control" name="loginUserName" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" id="password" type="password" placeholder="Password *" required="required" data-validation-required-message="Please enter your phone number.">
+                                    <input class="form-control" name="loginPassword" id="password" type="password" placeholder="Password *" required="required" data-validation-required-message="Please enter your phone number.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -410,7 +410,7 @@
 
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button id="signInButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Log In</button>
+                                <button id="signInButton" action="${pageContext.request.contextPath}/controller//login" class="btn btn-primary btn-xl text-uppercase"  type="submit" >Log In</button>
                             </div>
 
 
