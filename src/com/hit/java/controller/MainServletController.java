@@ -89,7 +89,7 @@ public class MainServletController extends HttpServlet
 
                             if (tempUser.getPassword().equals(userPassword)) {
                                 try {
-                                    getServletContext().getRequestDispatcher("personalProfile.jsp")
+                                    getServletContext().getRequestDispatcher("/personalProfile.jsp")
                                             .forward(request, response);
                                 } catch (ServletException e) {
                                     e.printStackTrace();
@@ -134,19 +134,13 @@ public class MainServletController extends HttpServlet
                                 gymDAO.updateUser(tempUser);
                                 out.println(tempUser);
 
-                                if(tempUser.getPassword().equals(userPassword))
-                                {
-                                    try {
-                                        getServletContext().getRequestDispatcher("Home.jsp")
-                                                .forward(request,response);
-                                    } catch (ServletException e) {
-                                        e.printStackTrace();
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
-                                }else
-                                {
-                                    out.println("failed to update");
+                                try {
+                                    getServletContext().getRequestDispatcher("/Home.jsp")
+                                            .forward(request,response);
+                                } catch (ServletException e) {
+                                    e.printStackTrace();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
                                 }
 
                             }
