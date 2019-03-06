@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<%
+  final String userName = request.getParameter("userName");
+%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
   <head>
 
@@ -57,7 +60,7 @@
               <a class="nav-link js-scroll-trigger" href="#team">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#userArea">Hello ...</a>
+              <a class="nav-link js-scroll-trigger" href="#userArea">Hello... </a>
             </li>
           </ul>
         </div>

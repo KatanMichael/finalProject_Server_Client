@@ -20,48 +20,44 @@ public class MainServletController extends HttpServlet
 {
     HibernateGymDAO gymDAO = HibernateGymDAO.getInstance();
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
 
-        if(path.equals("/signUp"))
-        {
+        if (path.equals("/signUp")) {
             User user = new User();
             user.setHeight(1.0f);
             user.setWeight(1.0f);
 
 
-            String userName = request.getParameter("registerUserName");
-            String userPassword = request.getParameter("registerPassword");
-            if(userName != null)
-            {
+            String userName = request.getParameter("loginUserName");
+            String userPassword = request.getParameter("loginPassword");
+            if (userName != null) {
                 user.setUserName(userName);
             }
 
-            if(userPassword != null)
-            {
+            if (userPassword != null) {
                 user.setPassword(userPassword);
             }
 
-            gymDAO.getUsersByName(userName, new RequestListener() {
+            gymDAO.getUsersByName(userName, new RequestListener()
+            {
                 @Override
-                public void onComplete(Object o)
-                {
+                public void onComplete(Object o) {
                     List<User> userList = (List) o;
-                    if(userList.size() > 0)
-                    {
+                    if (userList.size() > 0) {
                         out.println("Username already taken");
                     }
                 }
 
                 @Override
-                public void onError(String errorMsg)
-                {
-                    User tempUser = new User(userPassword,userName,1.1f,1.1f);
+                public void onError(String errorMsg) {
+                    User tempUser = new User(userPassword, userName, 1.1f, 1.1f);
+
+                    gymDAO.addNewUser(tempUser);
 
                     try {
                         getServletContext().getRequestDispatcher("/personalProfile.jsp")
-                                .forward(request,response);
+                                .forward(request, response);
                     } catch (ServletException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
@@ -73,10 +69,10 @@ public class MainServletController extends HttpServlet
 
         }
 
-        if(path.equals("/login"))
-        {
+        if (path.equals("/login")) {
             String userName = request.getParameter("loginUserName");
             String userPassword = request.getParameter("loginPassword");
+
 
             gymDAO.getUsersByName(userName, new RequestListener() {
                 @Override
@@ -89,7 +85,8 @@ public class MainServletController extends HttpServlet
 
                             if (tempUser.getPassword().equals(userPassword)) {
                                 try {
-                                    getServletContext().getRequestDispatcher("/personalProfile.jsp")
+                                    request.setAttribute("userName", userName);
+                                    getServletContext().getRequestDispatcher("/indexLogged.jsp")
                                             .forward(request, response);
                                 } catch (ServletException e) {
                                     e.printStackTrace();
@@ -111,8 +108,7 @@ public class MainServletController extends HttpServlet
                 }
             });
         }
-        if(path.equals("/personalProfile"))
-        {
+        if (path.equals("/personalProfile")) {
 
             String userName = request.getParameter("loginUserName");
             String userPassword = request.getParameter("loginPassword");
@@ -120,52 +116,52 @@ public class MainServletController extends HttpServlet
             String weight = request.getParameter("weight");
 
             gymDAO.getUsersByName(userName, new RequestListener() {
-                    @Override
-                    public void onComplete(Object o)
-                    {
-                        List<User> users = (List) o;
-                        if(users != null)
-                        {
-                            if (users.size() > 0)
-                            {
-                                User tempUser = users.get(0);
-                                tempUser.setHeight(Double.parseDouble(height));
-                                tempUser.setHeight(Double.parseDouble(weight));
-                                gymDAO.updateUser(tempUser);
-                                out.println(tempUser);
+                @Override
+                public void onComplete(Object o) {
+                    List<User> users = (List) o;
+                    if (users != null) {
+                        if (users.size() > 0) {
+                            User tempUser = users.get(0);
+                            tempUser.setHeight(Double.parseDouble(height));
+                            tempUser.setHeight(Double.parseDouble(weight));
+                            tempUser.setPassword(userPassword);
+                            gymDAO.updateUser(tempUser);
+                            out.println(tempUser);
 
-                                try {
-                                    getServletContext().getRequestDispatcher("/Home.jsp")
-                                            .forward(request,response);
-                                } catch (ServletException e) {
-                                    e.printStackTrace();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-
+                            try {
+                                getServletContext().getRequestDispatcher("/Home.jsp")
+                                        .forward(request, response);
+                            } catch (ServletException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
                             }
+
                         }
-
                     }
 
-                    @Override
-                    public void onError(String errorMsg) {
-                        out.println(errorMsg);
-                    }
-                });
+                }
 
-
-            }
+                @Override
+                public void onError(String errorMsg) {
+                    out.println(errorMsg);
+                }
+            });
 
 
         }
+        getServletContext().getRequestDispatcher("/index_FirstHomeView.jsp")
+                .forward(request,response);
+
+
+    }
 
 
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-
+        doPost(request,response);
 
     }
 

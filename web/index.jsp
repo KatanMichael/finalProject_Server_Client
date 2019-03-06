@@ -12,8 +12,9 @@
   </head>
   <body>
   <%
-    getServletConfig().getServletContext()
-            .getRequestDispatcher("/login.jsp").forward(request,response);
+      RequestDispatcher dispatcher = application.getRequestDispatcher("/controller/");
+
+      dispatcher.forward(request,response);
   %>
 
   </body>
