@@ -223,18 +223,83 @@ public class HibernateGymDAO implements IGymDAO
     @Override
     public void getActivityById(int id, RequestListener listener)
     {
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        final List list = session.createQuery("from Activity a WHERE a.id = '" + id + "' ").list();
+
+        if(list.size() == 0)
+        {
+            listener.onError("No Activity Found");
+
+        }else
+        {
+            listener.onComplete(list);
+        }
 
     }
 
     @Override
     public void getActivitiesByName(String name, RequestListener listener)
     {
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        final List list = session.createQuery("from Activity a WHERE a.name = '" + name + "' ").list();
+
+        if(list.size() == 0)
+        {
+            listener.onError("No Activity Found");
+
+        }else
+        {
+            listener.onComplete(list);
+        }
 
     }
 
     @Override
     public void getActivitiesBySets(boolean hasSets, RequestListener listener)
     {
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        final List list = session.createQuery("from Activity a WHERE a.hasSets = '" + hasSets + "' ").list();
+
+        if(list.size() == 0)
+        {
+            listener.onError("No Activity Found");
+
+        }else
+        {
+            listener.onComplete(list);
+        }
+
+    }
+
+    public void getActivitiesByUserId(int userId, RequestListener listener)
+    {
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        final List list = session.createQuery("from Activity a WHERE a.userId = '" + userId + "' ").list();
+
+        if(list.size() == 0)
+        {
+            listener.onError("No Activity Found");
+
+        }else
+        {
+            listener.onComplete(list);
+        }
 
     }
     @Override

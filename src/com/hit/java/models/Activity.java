@@ -10,15 +10,25 @@ public class Activity
     private String name;
     private boolean hasSets;
     private int numberOfSets;
+    private int userId;
 
     public Activity(){}
 
-    public Activity(int id, String name, boolean hasSets, int numberOfSets)
+    public Activity(int id,int userId, String name, boolean hasSets, int numberOfSets)
     {
         this.id = id;
+        this.userId = userId;
         this.name = name;
         this.hasSets = hasSets;
         this.numberOfSets = numberOfSets;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public int getId() {

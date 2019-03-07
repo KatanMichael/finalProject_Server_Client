@@ -8,6 +8,10 @@
             <generator class="increment"/>
         </id>
 
+        <property name="userId">
+            <column name="USER_ID"/>
+        </property>
+
         <property name="hasSets">
             <column name="HAS_SETS"/>
         </property>
@@ -15,6 +19,7 @@
         <property name="name">
             <column name="NAME"/>
         </property>
+
         <property name="numberOfSets">
             <column name="NUMBER_OF_SETS"/>
         </property>
