@@ -30,8 +30,8 @@ public class MainServletController extends HttpServlet
             user.setWeight(1.0f);
 
 
-            String userName = request.getParameter("loginUserName");
-            String userPassword = request.getParameter("loginPassword");
+            String userName = request.getParameter("registerUserName");
+            String userPassword = request.getParameter("registerPassword");
             if (userName != null) {
                 user.setUserName(userName);
             }
@@ -57,14 +57,13 @@ public class MainServletController extends HttpServlet
                     gymDAO.addNewUser(tempUser);
 
                     try {
-                        getServletContext().getRequestDispatcher("/personalProfile.jsp")
+                        getServletContext().getRequestDispatcher("/Home.jsp")
                                 .forward(request, response);
                     } catch (ServletException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
                 }
             });
 
@@ -74,8 +73,8 @@ public class MainServletController extends HttpServlet
             String userName = request.getParameter("loginUserName");
             String userPassword = request.getParameter("loginPassword");
 
-
-            gymDAO.getUsersByName(userName, new RequestListener() {
+            gymDAO.getUsersByName(userName, new RequestListener()
+            {
                 @Override
                 public void onComplete(Object o) {
                     List<User> users = (List) o;
@@ -91,7 +90,8 @@ public class MainServletController extends HttpServlet
                                             .forward(request, response);
                                 } catch (ServletException e) {
                                     e.printStackTrace();
-                                } catch (IOException e) {
+                                } catch (IOException e)
+                                {
                                     e.printStackTrace();
                                 }
                             } else {
@@ -137,7 +137,6 @@ public class MainServletController extends HttpServlet
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-
                         }
                     }
 
