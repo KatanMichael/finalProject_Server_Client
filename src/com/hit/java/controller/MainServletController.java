@@ -23,7 +23,8 @@ public class MainServletController extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
 
-        if (path.equals("/signUp")) {
+        if (path.equals("/signUp"))
+        {
             User user = new User();
             user.setHeight(1.0f);
             user.setWeight(1.0f);
