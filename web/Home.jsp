@@ -375,7 +375,7 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <form id="signinForm" name="sentMessage" novalidate="novalidate" action="${pageContext.request.contextPath}/controller/login" method="post">
+        <form id="signinForm" name="" novalidate="novalidate" action="${pageContext.request.contextPath}/controller/login" method="post">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -400,11 +400,11 @@
 
             <div class="col-md-6" id="modalLoginForm" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="false">
               <div class="form-group">
-                <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                <input class="form-control" id="name" name="loginUserName" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
                 <p class="help-block text-danger"></p>
               </div>
               <div class="form-group">
-                <input class="form-control" id="password" type="password" placeholder="Password *" required="required" data-validation-required-message="Please enter your phone number.">
+                <input class="form-control" id="password" name="loginPassword" type="password" placeholder="Password *" required="required" data-validation-required-message="Please enter your phone number.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
@@ -423,7 +423,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="form-group">
-                  <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                  <input class="form-control" id="nameSignUp" name="registerUserName" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
                   <p class="help-block text-danger"></p>
                 </div>
                 <div class="form-group">
@@ -431,13 +431,13 @@
                   <p class="help-block text-danger"></p>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" id="password" type="password" placeholder="Password *" required="required" data-validation-required-message="Please enter your phone number.">
+                  <input class="form-control" id="passwordSignUp" name="registerPassword" type="password" placeholder="Password *" required="required" data-validation-required-message="Please enter your phone number.">
                   <p class="help-block text-danger"></p>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-lg-12 text-center">
-                  <div id="success"></div>
-                  <button id="signUpButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Sign Up</button>
+                  <div id="successSignUp"></div>
+                  <button id="signUpButton" class="btn btn-primary btn-xl text-uppercase" type="submit" value="registerBtn">Sign Up</button>
                 </div>
               </div>
             </div>
