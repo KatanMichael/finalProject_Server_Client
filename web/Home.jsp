@@ -375,7 +375,7 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <form id="signinForm" name="sentMessage" novalidate="novalidate">
+        <form id="signinForm" name="sentMessage" novalidate="novalidate" action="${pageContext.request.contextPath}/controller/login" method="post">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -415,9 +415,11 @@
               <div id="success"></div>
               <button id="signInButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Log In</button>
             </div>
+        </form>
 
 
             <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+              <form id="signupForm" name="" novalidate="novalidate" action="${pageContext.request.contextPath}/controller/signUp" method="post">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="form-group">
@@ -439,11 +441,12 @@
                   </div>
                 </div>
               </div>
+              </form>
             </div>
 
 
           </div>
-        </form>
+
       </div>
     </div>
   </div>
