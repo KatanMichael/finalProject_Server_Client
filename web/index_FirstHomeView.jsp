@@ -412,7 +412,7 @@
 
             <div class="col-lg-12 text-center">
               <div id="success"></div>
-              <button id="signInButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Log In</button>
+              <a id="signInButton" href = "${pageContext.request.contextPath}/controller/login" class="btn btn-primary btn-xl text-uppercase" type="submit">Log In</a>
             </div>
 
 
@@ -434,7 +434,8 @@
                   <div class="clearfix"></div>
                   <div class="col-lg-12 text-center">
                     <div id="success"></div>
-                    <button id="signUpButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Sign Up</button>
+                    <a id="signUpButton" href = "${pageContext.request.contextPath}/controller/signUp" class="btn btn-primary btn-xl text-uppercase" type="submit">Sign Up</a>
+
                   </div>
                 </div>
               </div>
