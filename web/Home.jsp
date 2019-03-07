@@ -418,37 +418,37 @@
         </form>
 
 
-            <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
-              <form id="signupForm" name="" novalidate="novalidate" action="${pageContext.request.contextPath}/controller/signUp" method="post">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="form-group">
-                    <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="password" type="password" placeholder="Password *" required="required" data-validation-required-message="Please enter your phone number.">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="clearfix"></div>
-                  <div class="col-lg-12 text-center">
-                    <div id="success"></div>
-                    <button id="signUpButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Sign Up</button>
-                  </div>
+        <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+          <form id="signupForm" name="" novalidate="novalidate" action="${pageContext.request.contextPath}/controller/signUp" method="post">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="form-group">
+                  <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" id="password" type="password" placeholder="Password *" required="required" data-validation-required-message="Please enter your phone number.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="signUpButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Sign Up</button>
                 </div>
               </div>
-              </form>
             </div>
+          </form>
+        </div>
 
-
-          </div>
 
       </div>
+
     </div>
+  </div>
   </div>
 </section>
 
