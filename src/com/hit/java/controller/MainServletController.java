@@ -151,7 +151,7 @@ public class MainServletController extends HttpServlet
 
 
         }
-        getServletContext().getRequestDispatcher("/index_FirstHomeView.jsp")
+        getServletContext().getRequestDispatcher("/Home.jsp")
                 .forward(request,response);
 
 

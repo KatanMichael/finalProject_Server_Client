@@ -18,6 +18,8 @@
     <button type='submit'>Login</button>
 <%--<label for='form-switch'><span>Register</span></label>--%>
 <label for='form-switch'>Already Member ? Sign In Now..</label>
+
+
 </form>
 <form id='register-form' action="${pageContext.request.contextPath}/controller/signUp" method='post' >
 <input type="text"  name="registerUserName" value="" placeholder="Username" required>
