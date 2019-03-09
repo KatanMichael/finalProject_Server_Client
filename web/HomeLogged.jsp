@@ -190,9 +190,7 @@
                             <!-- Project Details Go Here -->
                             <h2 class="text-uppercase">Pilates Class</h2>
                             <p class="item-intro text-muted">Sign up for Pilates ?
-                              <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
 
-                              <input class="form-control" name="activityName" type="hidden" value="Pilates" aria-hidden="true"/>
                               <div class="btn-group">
                                 <button type="button" class="btn btn-outline-success dropdown-toggle"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -202,16 +200,19 @@
 
                                 <div class="dropdown-menu">
 
-                                  <input class="form-control" name="specificActivity" type="hidden" value="Pilates" aria-hidden="true"/>
-                                  <button type="submit" class="dropdown-item">Action</button>
+                                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                                    <input class="form-control" name="activityName" type="hidden" value="Pilates" aria-hidden="true"/>
+                                    <button type="submit" class="dropdown-item">Action</button>
+                                  </form>
 
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="#">Separated link</a>
+                                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                                    <input class="form-control" name="activityName" type="hidden" value="Pilates" aria-hidden="true"/>
+                                    <button type="submit" class="dropdown-item">Another action</button>
+                                  </form>
+
                                 </div>
                               </div>
-                              </form>
+
                                 <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
                                     <i class="fas fa-times"></i>
                                     No</button>
