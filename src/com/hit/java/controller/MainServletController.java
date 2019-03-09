@@ -160,7 +160,7 @@ public class MainServletController extends HttpServlet
                             gymDAO.updateUser(tempUser);
 
                             try {
-                                getServletContext().getRequestDispatcher("/Home.jsp")
+                                getServletContext().getRequestDispatcher("/HomeLogged.jsp")
                                         .forward(request, response);
                             } catch (ServletException e) {
                                 e.printStackTrace();
