@@ -2,6 +2,7 @@ package com.hit.java.models;
 
 public class Schedule {
 
+    private int id;
     private int activityId;
     private String name;
     private int day;
@@ -28,6 +29,16 @@ public class Schedule {
                 ", end=" + end +
                 '}';
     }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public void setActivityId(int activityId) {
         this.activityId = activityId;
