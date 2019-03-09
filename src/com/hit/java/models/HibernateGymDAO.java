@@ -261,27 +261,6 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
-    @Override
-    public void getActivitiesBySets(boolean hasSets, RequestListener listener)
-    {
-        sessionFactory = new AnnotationConfiguration().
-                configure().buildSessionFactory();
-
-        Session session = sessionFactory.openSession();
-
-        final List list = session.createQuery("from Activity a WHERE a.hasSets = '" + hasSets + "' ").list();
-
-        if(list.size() == 0)
-        {
-            listener.onError("No Activity Found");
-
-        }else
-        {
-            listener.onComplete(list);
-        }
-
-    }
-
     public void getActivitiesByUserId(int userId, RequestListener listener)
     {
         sessionFactory = new AnnotationConfiguration().
@@ -318,6 +297,69 @@ public class HibernateGymDAO implements IGymDAO
         session.close();
 
         sessionFactory.close();
+    }
+
+    @Override
+    public void addNewSchedule(Schedule schedule)
+    {
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        session.save(schedule);
+
+        session.getTransaction().commit();
+
+        session.close();
+
+        sessionFactory.close();
+
+
+    }
+
+    @Override
+    public void getScheduleById(int id, RequestListener listener)
+    {
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        final List list = session.createQuery("from Schedule s WHERE s.ia = '" + id + "' ").list();
+
+        if(list.size() == 0)
+        {
+            listener.onError("No Activity Found");
+
+        }else
+        {
+            listener.onComplete(list);
+        }
+
+    }
+
+    @Override
+    public void getScheduleByDay(int day, RequestListener listener)
+    {
+
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        final List list = session.createQuery("from Schedule s WHERE s.day = '" + day + "' ").list();
+
+        if(list.size() == 0)
+        {
+            listener.onError("No Activity Found");
+
+        }else
+        {
+            listener.onComplete(list);
+        }
     }
 }
 
