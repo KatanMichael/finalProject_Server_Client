@@ -66,20 +66,21 @@ public class MainServletController extends HttpServlet
                         if(a.getScheduleID() == activityID)
                         {
                             found = true;
+                            break;
                         }
                     }
                     if(!found)
                     {
                         gymDAO.addNewActivity(tempActivity);
+                    }
 
-                        try {
-                            getServletContext().getRequestDispatcher("/HomeLogged.jsp")
-                                    .forward(request, response);
-                        } catch (ServletException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                    try {
+                        getServletContext().getRequestDispatcher("/HomeLogged.jsp")
+                                .forward(request, response);
+                    } catch (ServletException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
 
 
