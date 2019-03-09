@@ -7,11 +7,12 @@ import org.hibernate.annotations.Entity;
 public class Activity
 {
     private int id;
+    private int userId;
     private String name;
     private String date;
     private int startTime;
     private int endTime;
-    private int userId;
+
 
     public Activity(){}
 
@@ -22,7 +23,6 @@ public class Activity
         this.date = date;
         this.startTime = startTime;
         this.endTime = endTime;
-
     }
 
     public String getDate() {

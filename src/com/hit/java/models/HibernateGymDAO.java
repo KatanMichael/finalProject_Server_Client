@@ -19,8 +19,7 @@ public class HibernateGymDAO implements IGymDAO
         return ourInstance;
     }
 
-    private HibernateGymDAO() {
-    }
+    private HibernateGymDAO() { }
 
 
     @Override
@@ -328,7 +327,7 @@ public class HibernateGymDAO implements IGymDAO
 
         Session session = sessionFactory.openSession();
 
-        final List list = session.createQuery("from Schedule s WHERE s.ia = '" + id + "' ").list();
+        final List list = session.createQuery("from Schedule s WHERE s.id = '" + id + "' ").list();
 
         if(list.size() == 0)
         {

@@ -1,5 +1,9 @@
 package com.hit.java.models;
 
+import org.hibernate.annotations.Entity;
+
+
+@Entity
 public class Schedule {
 
     private int id;

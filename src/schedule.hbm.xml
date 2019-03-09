@@ -3,8 +3,9 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+
     <class name="com.hit.java.models.Schedule" table="SCHEDULE">
-        <id name="id" type="int" column="id" >
+        <id name="id" type="int" column="ID" >
             <generator class="increment"/>
         </id>
 
@@ -28,4 +29,5 @@
             <column name="END"/>
         </property>
     </class>
+
 </hibernate-mapping>

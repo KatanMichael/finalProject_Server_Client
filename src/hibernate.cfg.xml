@@ -18,7 +18,7 @@
 
 		<mapping resource="user.hbm.xml"/>
 		<mapping resource="activity.hbm.xml"/>
-
+		<mapping resource="schedule.hbm.xml"/>
 
 
 </session-factory>

@@ -1,9 +1,6 @@
 package com.hit.java.controller;
 
-import com.hit.java.models.Activity;
-import com.hit.java.models.HibernateGymDAO;
-import com.hit.java.models.RequestListener;
-import com.hit.java.models.User;
+import com.hit.java.models.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -28,6 +25,9 @@ public class MainServletController extends HttpServlet
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
+
+        Schedule schedule = new Schedule(1,"Pilates",0,0,0);
+        gymDAO.addNewSchedule(schedule);
 
         if(path.equals("/logout"))
         {
