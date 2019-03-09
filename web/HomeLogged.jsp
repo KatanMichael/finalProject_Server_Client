@@ -191,6 +191,7 @@
                             <h2 class="text-uppercase">Pilates Class</h2>
                             <p class="item-intro text-muted">Sign up for pilates?
                               <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                              <a name="activityName" value="Pilates" aria-hidden="true"></a>
                                 <button type="submit" class="btn btn-outline-success">
                                  <i class="fas fa-check"></i>
                                  Yes</button>
