@@ -351,12 +351,12 @@
           <p class="help-block text-danger"></p>
         </div>
         <div class="form-group">
-          <input class="form-control" id="set_height" name="height" type="text" placeholder="Insert Height" required="required" data-validation-required-message="Please enter your height.">
+          <input class="form-control" id="set_height" name="height" type="text" placeholder="Current Height: ${user.height}" required="required" data-validation-required-message="Please enter your height.">
           <p class="help-block text-danger"></p>
         </div>
         <div class="form-group">
           <!--<input type="text" name="weight" placeholder="weight" required> -->
-          <input class="form-control" id="set_weight" name="weight" type="text" placeholder="Insert Weight" required="required" data-validation-required-message="Please enter your weight.">
+          <input class="form-control" id="set_weight" name="weight" type="text" placeholder="Current Weight: ${user.weight}" required="required" data-validation-required-message="Please enter your weight.">
           <p class="help-block text-danger"></p>
         </div>
       </div>
