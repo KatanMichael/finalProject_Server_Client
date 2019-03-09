@@ -63,7 +63,7 @@
           <a class="nav-link js-scroll-trigger" href="#about">About</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+          <a class="nav-link js-scroll-trigger" href="#chartsArea">See Progress</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#userArea">Hi, ${user.userName}</a>
@@ -193,10 +193,24 @@
                               <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
 
                               <input class="form-control" name="activityName" type="hidden" value="Pilates" aria-hidden="true"/>
-
-                                <button type="submit" class="btn btn-outline-success">
+                              <div class="btn-group">
+                                <button type="button" class="btn btn-outline-success dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                  <i class="fas fa-check"></i>
-                                 Yes</button>
+                                 Yes
+                                </button>
+
+                                <div class="dropdown-menu">
+
+                                  <input class="form-control" name="specificActivity" type="hidden" value="Pilates" aria-hidden="true"/>
+                                  <button type="submit" class="dropdown-item">Action</button>
+
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                              </div>
                               </form>
                                 <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
                                     <i class="fas fa-times"></i>
@@ -228,96 +242,20 @@
   </div>
 </section>
 
-<!-- Team -->
-<section class="bg-light" id="team">
+<!-- chartsArea -->
+<section class="bg-light" id="chartsArea">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-        <h3 class="section-subheading text-muted">Code With The Best</h3>
+        <h2 class="section-heading text-uppercase">See Your Progress</h2>
+        <h3 class="section-subheading text-muted">via these charts</h3>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="team-member">
-          <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath}/img/team/1.jpg" alt="">
-          <h4>Shani Geva</h4>
-          <p class="text-muted">Lead Designer</p>
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="team-member">
-          <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath}/img/team/2.jpg" alt="">
-          <h4>Daniel Yadlin</h4>
-          <p class="text-muted">Lead Manager</p>
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="team-member">
-          <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath}/img/team/3.jpg" alt="">
-          <h4>Michael Katan</h4>
-          <p class="text-muted">Lead Developer</p>
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+    <div id="canvas-holder">
+      <canvas id="chart-area"></canvas>
     </div>
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <p class="large text-muted">
-          Hit Mobile Class 2018-19
-        </p>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -471,6 +409,102 @@
 
   });
 
+</script>
+
+<!-- Charts Scripts -->
+<script src="${pageContext.request.contextPath}/js/charts/Chart.bundle.js"></script>
+<script src="${pageContext.request.contextPath}/js/charts/utils.js"></script>
+
+<script>
+  var randomScalingFactor = function() {
+    return Math.round(Math.random() * 100);
+  };
+
+  var chartColors = window.chartColors;
+  var color = Chart.helpers.color;
+  var config = {
+    data: {
+      datasets: [{
+        data: [
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor(),
+        ],
+        backgroundColor: [
+          color(chartColors.red).alpha(0.5).rgbString(),
+          color(chartColors.orange).alpha(0.5).rgbString(),
+          color(chartColors.yellow).alpha(0.5).rgbString(),
+          color(chartColors.green).alpha(0.5).rgbString(),
+          color(chartColors.blue).alpha(0.5).rgbString(),
+        ],
+        label: 'My dataset' // for legend
+      }],
+      labels: [
+        'Red',
+        'Orange',
+        'Yellow',
+        'Green',
+        'Blue'
+      ]
+    },
+    options: {
+      responsive: true,
+      legend: {
+        position: 'right',
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Polar Area Chart'
+      },
+      scale: {
+        ticks: {
+          beginAtZero: true
+        },
+        reverse: false
+      },
+      animation: {
+        animateRotate: false,
+        animateScale: true
+      }
+    }
+  };
+
+  window.onload = function() {
+    var ctx = document.getElementById('chart-area');
+    window.myPolarArea = Chart.PolarArea(ctx, config);
+  };
+
+  document.getElementById('randomizeData').addEventListener('click', function() {
+    config.data.datasets.forEach(function(piece, i) {
+      piece.data.forEach(function(value, j) {
+        config.data.datasets[i].data[j] = randomScalingFactor();
+      });
+    });
+    window.myPolarArea.update();
+  });
+
+  var colorNames = Object.keys(window.chartColors);
+  document.getElementById('addData').addEventListener('click', function() {
+    if (config.data.datasets.length > 0) {
+      config.data.labels.push('data #' + config.data.labels.length);
+      config.data.datasets.forEach(function(dataset) {
+        var colorName = colorNames[config.data.labels.length % colorNames.length];
+        dataset.backgroundColor.push(window.chartColors[colorName]);
+        dataset.data.push(randomScalingFactor());
+      });
+      window.myPolarArea.update();
+    }
+  });
+  document.getElementById('removeData').addEventListener('click', function() {
+    config.data.labels.pop(); // remove the label first
+    config.data.datasets.forEach(function(dataset) {
+      dataset.backgroundColor.pop();
+      dataset.data.pop();
+    });
+    window.myPolarArea.update();
+  });
 </script>
 
 </body>
