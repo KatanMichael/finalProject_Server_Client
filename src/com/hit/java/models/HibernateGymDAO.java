@@ -364,4 +364,30 @@ public class HibernateGymDAO implements IGymDAO
             listener.onComplete(list);
         }
     }
+
+    public void getAllSchedule(RequestListener listener)
+    {
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        List schedule;
+
+        try {
+            schedule = session.createQuery("from Schedule ").list();
+            listener.onComplete(schedule);
+        }catch (HibernateException e)
+        {
+            listener.onError(e.getMessage());
+        }
+
+
+
+        session.close();
+        sessionFactory.close();
+
+    }
 }

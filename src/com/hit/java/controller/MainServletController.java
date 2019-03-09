@@ -21,10 +21,22 @@ public class MainServletController extends HttpServlet
 {
     HibernateGymDAO gymDAO = HibernateGymDAO.getInstance();
     private User currentUser;
-
+    List<Schedule> allTheSchedule;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
+
+        gymDAO.getAllSchedule(new RequestListener()
+        {
+            @Override
+            public void onComplete(Object o)
+            {
+                allTheSchedule = (List<Schedule>) o;
+            }
+
+            @Override
+            public void onError(String errorMsg) { }
+        });
 
         if(path.equals("/logout"))
         {
@@ -36,9 +48,8 @@ public class MainServletController extends HttpServlet
 
         if (path.equals("/activityAdd"))
         {
-            String activityName = request.getParameter("activityName");
             int activityID = Integer.parseInt(request.getParameter("activityID"));
-            Activity activity = new Activity(currentUser.getId(), activityName,activityID);
+            Activity tempActivity = new Activity(currentUser.getId(),activityID);
 
             gymDAO.getActivitiesByUserId(currentUser.getId(), new RequestListener()
             {
@@ -49,20 +60,7 @@ public class MainServletController extends HttpServlet
 
                     for(Activity a: listOfActivities)
                     {
-                        if(a.getName().equals(activityName))
-                        {
-                            //Found another activity
-                            sendAlert("Found another activity", response);
-                            try {
-                                getServletContext().getRequestDispatcher("/HomeLogged.jsp")
-                                        .forward(request, response);
-                            } catch (ServletException e) {
-                                e.printStackTrace();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
 
-                        }
                     }
 
                  }

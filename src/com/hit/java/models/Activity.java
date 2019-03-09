@@ -7,12 +7,12 @@ import org.hibernate.annotations.Entity;
 public class Activity {
     private int id;
     private int userId;
-    private int ScheuleID;
+    private int scheuleId;
 
-    public Activity(int id, int userId, int scheuleID) {
+    public Activity(int userId, int scheuleId) {
         this.id = id;
         this.userId = userId;
-        ScheuleID = scheuleID;
+        this.scheuleId = scheuleId;
     }
 
     public Activity() {
@@ -35,10 +35,10 @@ public class Activity {
     }
 
     public int getScheduleID() {
-        return ScheduleID;
+        return scheuleId;
     }
 
     public void setScheduleID(int scheduleID) {
-        ScheduleID = scheduleID;
+        scheuleId = scheduleID;
     }
 }
