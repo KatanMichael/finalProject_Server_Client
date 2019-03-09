@@ -189,9 +189,9 @@
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <h2 class="text-uppercase">Pilates Class</h2>
-                            <p class="item-intro text-muted">Sign up for pilates?
+                            <p class="item-intro text-muted">Sign up for
                               <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                              <a name="activityName" value="Pilates" aria-hidden="true"></a>
+                              <a name="activityName" value="Pilates" aria-hidden="true">Pilates</a> ?
                                 <button type="submit" class="btn btn-outline-success">
                                  <i class="fas fa-check"></i>
                                  Yes</button>
