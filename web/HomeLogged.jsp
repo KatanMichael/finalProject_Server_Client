@@ -384,8 +384,8 @@
       eventLimit: true, // allow "more" link when too many events
       events: [
         {
-          id: 999,
-          title: 'Class1',
+          id: ${userSchedules.get(0).getId()},
+          title: ${userSchedules.get(0).getName()},
           start: '2019-03-10T16:00:00'
         },
         {

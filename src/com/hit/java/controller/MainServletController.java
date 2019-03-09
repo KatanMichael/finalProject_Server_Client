@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.System.out;
@@ -21,9 +22,13 @@ public class MainServletController extends HttpServlet
 {
     HibernateGymDAO gymDAO = HibernateGymDAO.getInstance();
     private User currentUser;
+    private List<Activity> currentUserActivities;
+    private ArrayList<Schedule> currentUserSchedules;
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
+
 
 
         if(path.equals("/logout"))
@@ -32,6 +37,9 @@ public class MainServletController extends HttpServlet
             if(session != null)
                 session.invalidate();
             request.getRequestDispatcher("/Home.jsp").forward(request,response);
+            currentUser = null;
+            currentUserActivities.clear();
+            currentUserSchedules.clear();
         }
 
         if (path.equals("/activityAdd"))
@@ -139,6 +147,7 @@ public class MainServletController extends HttpServlet
 
             gymDAO.getUsersByName(userName, new RequestListener()
             {
+                HttpSession session = request.getSession();
                 @Override
                 public void onComplete(Object o) {
                     List<User> users = (List) o;
@@ -157,8 +166,42 @@ public class MainServletController extends HttpServlet
                                 if (tempUser != null) {
                                     //success!
                                     //save the user data in session scope
-                                    HttpSession session = request.getSession();
                                     session.setAttribute("user", tempUser);
+
+                                    gymDAO.getActivitiesByUserId(tempUser.getId(), new RequestListener() {
+                                        @Override
+                                        public void onComplete(Object o)
+                                        {
+                                            currentUserActivities = (List<Activity>) o;
+                                            session.setAttribute("userActivities", currentUserActivities);
+                                            currentUserSchedules = new ArrayList<>();
+                                            for(int i = 0; i < currentUserActivities.size(); i++)
+                                            {
+                                                gymDAO.getScheduleById(currentUserActivities.get(i).getId(), new RequestListener()
+                                                {
+                                                    @Override
+                                                    public void onComplete(Object o)
+                                                    {
+                                                        List<Schedule> tempSchedule = (List<Schedule>) o;
+                                                        currentUserSchedules.add(tempSchedule.get(0));
+                                                    }
+
+                                                    @Override
+                                                    public void onError(String errorMsg)
+                                                    { }
+                                                });
+                                            }
+                                            session.setAttribute("userSchedules", currentUserSchedules);
+                                        }
+
+                                        @Override
+                                        public void onError(String errorMsg)
+                                        {
+
+                                        }
+                                    });
+
+
 
                                     try {
                                         requestDispatcher.forward(request, response);
