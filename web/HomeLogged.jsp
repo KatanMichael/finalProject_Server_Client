@@ -9,8 +9,8 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<html lang="en">
 
+<html lang="en">
 <head>
 
   <meta charset="utf-8">
@@ -30,7 +30,7 @@
   <!-- <link href="vendor/bootstrap-social/assets/css/font-awesome.css" rel="stylesheet"> -->
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="${pageContext.request.contextPath}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -200,7 +200,7 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="team-member">
-          <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
+          <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath}/img/team/1.jpg" alt="">
           <h4>Shani Geva</h4>
           <p class="text-muted">Lead Designer</p>
           <ul class="list-inline social-buttons">
@@ -224,7 +224,7 @@
       </div>
       <div class="col-sm-4">
         <div class="team-member">
-          <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
+          <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath}/img/team/2.jpg" alt="">
           <h4>Daniel Yadlin</h4>
           <p class="text-muted">Lead Manager</p>
           <ul class="list-inline social-buttons">
@@ -248,7 +248,7 @@
       </div>
       <div class="col-sm-4">
         <div class="team-member">
-          <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+          <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath}/img/team/3.jpg" alt="">
           <h4>Michael Katan</h4>
           <p class="text-muted">Lead Developer</p>
           <ul class="list-inline social-buttons">
@@ -287,7 +287,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-6">
         <a href="#">
-          <img class="img-fluid d-block mx-auto" src="img/logos/Hit_logo.jpg" alt="">
+          <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/logos/Hit_logo.jpg" alt="">
         </a>
       </div>
     </div>
