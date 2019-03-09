@@ -13,24 +13,24 @@
 
   <title>Gym App Agency</title>
   <!-- <link rel="GymAppIcon" href="img/logos/logo_45K_icon.ico" type="image/x-icon" /> -->
-  <link rel="icon" href="img/logos/logo.png">
+  <link rel="icon" href="${pageContext.request.contextPath}/img/logos/logo.png">
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+  <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.css" rel="stylesheet"/>
 
   <!-- Bootstrap Social core CSS -->
-  <link href="vendor/bootstrap-social/bootstrap-social.css" rel="stylesheet" />
+  <link href="${pageContext.request.contextPath}/vendor/bootstrap-social/bootstrap-social.css" rel="stylesheet" />
   <!-- <link href="vendor/bootstrap-social/assets/css/font-awesome.css" rel="stylesheet"> -->
 
   <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="${pageContext.request.contextPath}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  <link href="css/agency.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/css/agency.css" rel="stylesheet">
 
 </head>
 
@@ -177,7 +177,7 @@
               <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+          <img class="img-fluid" src="${pageContext.request.contextPath}/img/portfolio/01-thumbnail.jpg" alt="">
         </a>
         <div class="portfolio-caption">
           <h4>Pilates</h4>
@@ -191,7 +191,7 @@
               <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+          <img class="img-fluid" src="${pageContext.request.contextPath}/img/portfolio/02-thumbnail.jpg" alt="">
         </a>
         <div class="portfolio-caption">
           <h4>KickBox</h4>
@@ -205,7 +205,7 @@
               <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+          <img class="img-fluid" src="${pageContext.request.contextPath}/img/portfolio/03-thumbnail.jpg" alt="">
         </a>
         <div class="portfolio-caption">
           <h4>Zumba</h4>
@@ -219,7 +219,7 @@
               <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+          <img class="img-fluid" src="${pageContext.request.contextPath}/img/portfolio/04-thumbnail.jpg" alt="">
         </a>
         <div class="portfolio-caption">
           <h4>Weight Training</h4>
@@ -233,7 +233,7 @@
               <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
+          <img class="img-fluid" src="${pageContext.request.contextPath}/img/portfolio/05-thumbnail.jpg" alt="">
         </a>
         <div class="portfolio-caption">
           <h4>Burning Fat</h4>
@@ -247,7 +247,7 @@
               <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
-          <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
+          <img class="img-fluid" src="${pageContext.request.contextPath}/img/portfolio/06-thumbnail.jpg" alt="">
         </a>
         <div class="portfolio-caption">
           <h4>Spinning</h4>
@@ -270,7 +270,7 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="team-member">
-          <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
+          <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath}/img/team/1.jpg" alt="">
           <h4>Shani Geva</h4>
           <p class="text-muted">Lead Designer</p>
           <ul class="list-inline social-buttons">
@@ -294,7 +294,7 @@
       </div>
       <div class="col-sm-4">
         <div class="team-member">
-          <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
+          <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath}/img/team/2.jpg" alt="">
           <h4>Daniel Yadlin</h4>
           <p class="text-muted">Lead Manager</p>
           <ul class="list-inline social-buttons">
@@ -318,7 +318,7 @@
       </div>
       <div class="col-sm-4">
         <div class="team-member">
-          <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+          <img class="mx-auto rounded-circle" src="${pageContext.request.contextPath}/img/team/3.jpg" alt="">
           <h4>Michael Katan</h4>
           <p class="text-muted">Lead Developer</p>
           <ul class="list-inline social-buttons">
@@ -357,7 +357,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-6">
         <a href="#">
-          <img class="img-fluid d-block mx-auto" src="img/logos/Hit_logo.jpg" alt="">
+          <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/logos/Hit_logo.jpg" alt="">
         </a>
       </div>
     </div>
@@ -513,7 +513,7 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">Pilates Class</h2>
               <p class="item-intro text-muted">Why choose pilates?</p>
-              <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/01-full.jpg" alt="">
               <p>
                 Pilates is a physical fitness system developed in the early 20th century by Joseph Pilates, after whom it was named.
                 In his book, Joseph Pilates presents his method as the art of controlled movements, which should look and feel like a workout
@@ -558,7 +558,7 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">Kickboxing Class</h2>
               <p class="item-intro text-muted">Why choose Kickboxing?</p>
-              <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/02-full.jpg" alt="">
               <p>
                 Kickboxing is a group of stand-up combat sports based on kicking and punching,
                 historically developed from karate mixed with boxing.
@@ -602,7 +602,7 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">Zumba Class</h2>
               <p class="item-intro text-muted">Why choose Zumba?</p>
-              <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/03-full.jpg" alt="">
               <p>
                 Zumba is an exercise fitness program created by Colombian dancer and choreographer
                 Alberto "Beto" Perez during the 1990s.
@@ -650,7 +650,7 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">Weight Training Class</h2>
               <p class="item-intro text-muted">Why choose Weight Training?</p>
-              <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/04-full.jpg" alt="">
               <p>
                 Weight training is a common type of strength training for developing the strength and size of
                 skeletal muscles. It utilizes the force of gravity in the form of weighted bars, dumbbells or
@@ -690,7 +690,7 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">Burnning Fat Class</h2>
               <p class="item-intro text-muted">Why choose this class?</p>
-              <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/05-full.jpg" alt="">
               <p>
                 At its core, burning fat comes down to the process of lipolysis—the breaking down of fat lipids,
                 explains Seedman. This happens in the mitochondria of the muscles, or the powerhouses of the cells,
@@ -730,7 +730,7 @@
               <!-- Project Details Go Here -->
               <h2 class="text-uppercase">Spinning Class</h2>
               <p class="item-intro text-muted">Why choose this class?</p>
-              <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.png" alt="">
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/06-full.png" alt="">
               <p>
                 Indoor cycling, often also called spinning, as an organized activity, is a form of
                 exercise with classes focusing on endurance, strength, intervals, high intensity
@@ -754,18 +754,18 @@
 </div>
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/vendor/jquery/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="${pageContext.request.contextPath}/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Contact form JavaScript -->
-<script src="js/jqBootstrapValidation.js"></script>
-<script src="js/contact_me.js"></script>
+<script src="${pageContext.request.contextPath}/js/jqBootstrapValidation.js"></script>
+<script src="${pageContext.request.contextPath}/js/contact_me.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="js/agency.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/agency.min.js"></script>
 
 </body>
 
