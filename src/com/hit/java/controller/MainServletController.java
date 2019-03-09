@@ -38,9 +38,10 @@ public class MainServletController extends HttpServlet
 
         if (path.equals("/activityAdd"))
         {
-            Activity activity = new Activity();
+            String activityName = request.getParameter("activityName");
+            Activity activity = new Activity(currentUser.getId(), activityName,"1/1/19",14,16);
 
-            String activityName = request.getParameter("registerUserName");
+            gymDAO.addNewActivity(activity);
 
         }
 
@@ -71,11 +72,10 @@ public class MainServletController extends HttpServlet
                 }
 
                 @Override
-                public void onError(String errorMsg) {
+                public void onError(String errorMsg)
+                {
                     User tempUser = new User(userPassword, userName, 1.1f, 1.1f);
-
                     gymDAO.addNewUser(tempUser);
-
                     try {
                         getServletContext().getRequestDispatcher("/Home.jsp")
                                 .forward(request, response);

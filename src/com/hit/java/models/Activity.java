@@ -8,19 +8,36 @@ public class Activity
 {
     private int id;
     private String name;
-    private boolean hasSets;
-    private int numberOfSets;
+    private String date;
+    private int startTime;
+    private int endTime;
     private int userId;
 
     public Activity(){}
 
-    public Activity(int id,int userId, String name, boolean hasSets, int numberOfSets)
+    public Activity(int userId, String name, String date, int startTime, int endTime)
     {
-        this.id = id;
         this.userId = userId;
         this.name = name;
-        this.hasSets = hasSets;
-        this.numberOfSets = numberOfSets;
+        this.date = date;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public int getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(int endTime) {
+        this.endTime = endTime;
     }
 
     public int getUserId() {
@@ -47,19 +64,12 @@ public class Activity
         this.name = name;
     }
 
-    public boolean isHasSets() {
-        return hasSets;
+
+    public int getStartTime() {
+        return startTime;
     }
 
-    public void setHasSets(boolean hasSets) {
-        this.hasSets = hasSets;
-    }
-
-    public int getNumberOfSets() {
-        return numberOfSets;
-    }
-
-    public void setNumberOfSets(int numberOfSets) {
-        this.numberOfSets = numberOfSets;
+    public void setStartTime(int numberOfSets) {
+        this.startTime = numberOfSets;
     }
 }

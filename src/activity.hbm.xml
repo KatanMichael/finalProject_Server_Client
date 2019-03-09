@@ -12,16 +12,20 @@
             <column name="USER_ID"/>
         </property>
 
-        <property name="hasSets">
-            <column name="HAS_SETS"/>
-        </property>
-
         <property name="name">
             <column name="NAME"/>
         </property>
 
-        <property name="numberOfSets">
-            <column name="NUMBER_OF_SETS"/>
+        <property name="date">
+            <column name="DATE"/>
+        </property>
+
+        <property name="startTime">
+            <column name="START_TIME"/>
+        </property>
+
+        <property name="endTime">
+            <column name="END_TIME"/>
         </property>
 
     </class>
