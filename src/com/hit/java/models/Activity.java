@@ -22,6 +22,7 @@ public class Activity
         this.date = date;
         this.startTime = startTime;
         this.endTime = endTime;
+
     }
 
     public String getDate() {
