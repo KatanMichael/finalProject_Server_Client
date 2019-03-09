@@ -12,7 +12,7 @@
   </head>
   <body>
   <%
-      RequestDispatcher dispatcher = application.getRequestDispatcher("/controller/");
+      RequestDispatcher dispatcher = application.getRequestDispatcher("/controller/Home");
 
       dispatcher.forward(request,response);
   %>

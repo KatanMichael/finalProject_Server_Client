@@ -12,7 +12,6 @@ public class HibernateGymDAO implements IGymDAO
     private static HibernateGymDAO ourInstance = new HibernateGymDAO();
     private SessionFactory sessionFactory;
 
-
     public static HibernateGymDAO getInstance() {
         if (ourInstance == null) {
             ourInstance = new HibernateGymDAO();

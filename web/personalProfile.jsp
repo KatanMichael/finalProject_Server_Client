@@ -10,7 +10,7 @@
 <head>
 
     <h4><label for='form-switch'><span>Update your bio stats: </span></label></h4>
-    <form id='login-form' action="${pageContext.request.contextPath}/controller//personalProfile" method='post'>
+    <form id='login-form' action="${pageContext.request.contextPath}/controller/personalProfile" method='post'>
         <input type="text" name="loginUserName" placeholder="Username" required>
         <input type="text" name="height" placeholder="height" required>
         <input type="text" name="weight" placeholder="weight" required>

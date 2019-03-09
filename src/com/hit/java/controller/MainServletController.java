@@ -4,6 +4,7 @@ import com.hit.java.models.HibernateGymDAO;
 import com.hit.java.models.RequestListener;
 import com.hit.java.models.User;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +20,8 @@ import static java.lang.System.out;
 public class MainServletController extends HttpServlet
 {
     HibernateGymDAO gymDAO = HibernateGymDAO.getInstance();
+    private User currentUser;
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
@@ -28,7 +31,6 @@ public class MainServletController extends HttpServlet
             User user = new User();
             user.setHeight(1.0f);
             user.setWeight(1.0f);
-
 
             String userName = request.getParameter("registerUserName");
             String userPassword = request.getParameter("registerPassword");
@@ -84,16 +86,20 @@ public class MainServletController extends HttpServlet
                             out.println(tempUser);
 
                             if (tempUser.getPassword().equals(userPassword)) {
+
+                                currentUser = tempUser;
+                                final RequestDispatcher requestDispatcher = getServletConfig()
+                                        .getServletContext()
+                                        .getRequestDispatcher("/personalProfile.jsp");
+
                                 try {
-                                    request.setAttribute("userName", userName);
-                                    getServletContext().getRequestDispatcher("/indexLogged.jsp")
-                                            .forward(request, response);
+                                    requestDispatcher.forward(request,response);
                                 } catch (ServletException e) {
                                     e.printStackTrace();
-                                } catch (IOException e)
-                                {
+                                } catch (IOException e) {
                                     e.printStackTrace();
                                 }
+
                             } else {
                                 out.println("Wrong Password");
                             }
@@ -112,7 +118,6 @@ public class MainServletController extends HttpServlet
         if (path.equals("/personalProfile")) {
 
             String userName = request.getParameter("loginUserName");
-            String userPassword = request.getParameter("loginPassword");
             String height = request.getParameter("height");
             String weight = request.getParameter("weight");
 
@@ -124,10 +129,9 @@ public class MainServletController extends HttpServlet
                         if (users.size() > 0) {
                             User tempUser = users.get(0);
                             tempUser.setHeight(Double.parseDouble(height));
-                            tempUser.setHeight(Double.parseDouble(weight));
-                            tempUser.setPassword(userPassword);
+                            tempUser.setWeight(Double.parseDouble(weight));
+                            tempUser.setPassword(currentUser.getPassword());
                             gymDAO.updateUser(tempUser);
-                            out.println(tempUser);
 
                             try {
                                 getServletContext().getRequestDispatcher("/Home.jsp")
@@ -150,13 +154,14 @@ public class MainServletController extends HttpServlet
 
 
         }
-        getServletContext().getRequestDispatcher("/Home.jsp")
-                .forward(request,response);
 
+        if(path.equals("/Home"))
+        {
+            getServletContext().getRequestDispatcher("/Home.jsp")
+                    .forward(request,response);
+        }
 
     }
-
-
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -164,7 +169,5 @@ public class MainServletController extends HttpServlet
         doPost(request,response);
 
     }
-
-
 
 }
