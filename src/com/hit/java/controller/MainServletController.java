@@ -90,7 +90,7 @@ public class MainServletController extends HttpServlet
                                 currentUser = tempUser;
                                 final RequestDispatcher requestDispatcher = getServletConfig()
                                         .getServletContext()
-                                        .getRequestDispatcher("/personalProfile.jsp");
+                                        .getRequestDispatcher("/HomeLogged.jsp");
 
                                 try {
                                     requestDispatcher.forward(request,response);
