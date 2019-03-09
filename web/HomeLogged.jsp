@@ -69,7 +69,7 @@
           <a class="nav-link js-scroll-trigger" href="#userArea">Hi, ${user.userName}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#">Log Out</a>
+          <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath}/controller/logout">Log Out</a>
         </li>
       </ul>
     </div>

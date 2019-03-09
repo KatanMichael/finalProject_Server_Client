@@ -28,6 +28,14 @@ public class MainServletController extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
 
+        if(path.equals("/logout"))
+        {
+            HttpSession session = request.getSession(false);
+            if(session != null)
+                session.invalidate();
+            request.getRequestDispatcher("/Home.jsp").forward(request,response);
+        }
+
         if (path.equals("/activityAdd"))
         {
             Activity activity = new Activity();
