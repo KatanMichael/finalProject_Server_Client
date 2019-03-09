@@ -21,22 +21,10 @@ public class MainServletController extends HttpServlet
 {
     HibernateGymDAO gymDAO = HibernateGymDAO.getInstance();
     private User currentUser;
-    List<Schedule> allTheSchedule;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
 
-//        gymDAO.getAllSchedule(new RequestListener()
-//        {
-//            @Override
-//            public void onComplete(Object o)
-//            {
-//                allTheSchedule = (List<Schedule>) o;
-//            }
-//
-//            @Override
-//            public void onError(String errorMsg) { }
-//        });
 
         if(path.equals("/logout"))
         {
@@ -48,8 +36,7 @@ public class MainServletController extends HttpServlet
 
         if (path.equals("/activityAdd"))
         {
-            //int activityID = Integer.parseInt(request.getParameter("activityID"));
-            int activityID = 1;
+            int activityID = Integer.parseInt(request.getParameter("activityID"));
 
             Activity tempActivity = new Activity(currentUser.getId(),activityID);
 
@@ -83,7 +70,6 @@ public class MainServletController extends HttpServlet
                         e.printStackTrace();
                     }
 
-
                  }
 
                 @Override
@@ -101,10 +87,6 @@ public class MainServletController extends HttpServlet
                     }
                 }
             });
-
-
-
-
         }
 
         if (path.equals("/signUp"))
@@ -258,21 +240,6 @@ public class MainServletController extends HttpServlet
 
     }
 
-    public void addNewActivity(Activity activity,HttpServletRequest request, HttpServletResponse response)
-    {
-
-        gymDAO.addNewActivity(activity);
-
-        try {
-            getServletContext().getRequestDispatcher("/HomeLogged.jsp")
-                    .forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 
     public void sendAlert(String alert, HttpServletResponse response) {
         PrintWriter out = null;
