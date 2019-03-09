@@ -2,11 +2,6 @@
 <%@ page import="com.hit.java.models.User" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<%
-  final String userName = request.getParameter("userName");
-%>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
@@ -71,7 +66,7 @@
           <a class="nav-link js-scroll-trigger" href="#team">Team</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#userArea">Hi, <%=userName%></a>
+          <a class="nav-link js-scroll-trigger" href="#userArea">Hi, ${user.userName}</a>
         </li>
       </ul>
     </div>
