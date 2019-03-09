@@ -189,9 +189,11 @@
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <h2 class="text-uppercase">Pilates Class</h2>
-                            <p class="item-intro text-muted">Sign up for
+                            <p class="item-intro text-muted">Sign up for Pilates ?
                               <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                              <a name="activityName" value="Pilates" aria-hidden="true">Pilates</a> ?
+
+                              <input class="form-control" name="activityName" type="hidden" value="Pilates" aria-hidden="true"/>
+
                                 <button type="submit" class="btn btn-outline-success">
                                  <i class="fas fa-check"></i>
                                  Yes</button>
@@ -345,7 +347,7 @@
 
       <div class="col-md-6" id="modalLoginForm" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="false">
         <div class="form-group">
-          <input class="form-control" id="name" name="loginUserName" type="text" placeholder="Username" required="required" data-validation-required-message="Please enter your name.">
+          <input class="form-control" id="name" name="loginUserName" type="hidden" placeholder="Username" value="${user.userName}">
           <p class="help-block text-danger"></p>
         </div>
         <div class="form-group">
