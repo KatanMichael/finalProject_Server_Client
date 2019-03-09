@@ -239,26 +239,7 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
-    @Override
-    public void getActivitiesByName(String name, RequestListener listener)
-    {
-        sessionFactory = new AnnotationConfiguration().
-                configure().buildSessionFactory();
 
-        Session session = sessionFactory.openSession();
-
-        final List list = session.createQuery("from Activity a WHERE a.name = '" + name + "' ").list();
-
-        if(list.size() == 0)
-        {
-            listener.onError("No Activity Found");
-
-        }else
-        {
-            listener.onComplete(list);
-        }
-
-    }
 
     public void getActivitiesByUserId(int userId, RequestListener listener)
     {
@@ -279,6 +260,29 @@ public class HibernateGymDAO implements IGymDAO
         }
 
     }
+
+    public void getAllActivities(RequestListener listener)
+    {
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        List from_activity;
+
+        try {
+            from_activity = session.createQuery("from Activity ").list();
+            listener.onComplete(from_activity);
+        }catch (HibernateException e)
+        {
+            listener.onError(e.getMessage());
+        }
+        session.close();
+        sessionFactory.close();
+    }
+
     @Override
     public void addNewActivity(Activity activity)
     {
@@ -361,5 +365,3 @@ public class HibernateGymDAO implements IGymDAO
         }
     }
 }
-
-//TODO Fill blanks Methods

@@ -13,20 +13,8 @@
             <column name="USER_ID"/>
         </property>
 
-        <property name="name">
-            <column name="NAME"/>
-        </property>
-
-        <property name="date">
-            <column name="DATE"/>
-        </property>
-
-        <property name="startTime">
-            <column name="START_TIME"/>
-        </property>
-
-        <property name="endTime">
-            <column name="END_TIME"/>
+        <property name="scheduled">
+            <column name="SCHEDULED"/>
         </property>
 
     </class>

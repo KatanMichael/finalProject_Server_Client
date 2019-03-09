@@ -26,9 +26,6 @@ public class MainServletController extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
 
-        Schedule schedule = new Schedule(1,"Pilates",0,0,0);
-        gymDAO.addNewSchedule(schedule);
-
         if(path.equals("/logout"))
         {
             HttpSession session = request.getSession(false);
@@ -40,7 +37,8 @@ public class MainServletController extends HttpServlet
         if (path.equals("/activityAdd"))
         {
             String activityName = request.getParameter("activityName");
-            Activity activity = new Activity(currentUser.getId(), activityName,"1/1/19",14,16);
+            int activityID = Integer.parseInt(request.getParameter("activityID"));
+            Activity activity = new Activity(currentUser.getId(), activityName,activityID);
 
             gymDAO.getActivitiesByUserId(currentUser.getId(), new RequestListener()
             {

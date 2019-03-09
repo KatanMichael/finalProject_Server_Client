@@ -4,49 +4,18 @@ package com.hit.java.models;
 import org.hibernate.annotations.Entity;
 
 @Entity
-public class Activity
-{
+public class Activity {
     private int id;
     private int userId;
-    private String name;
-    private String date;
-    private int startTime;
-    private int endTime;
+    private int ScheuleID;
 
-
-    public Activity(){}
-
-    public Activity(int userId, String name, String date, int startTime, int endTime)
-    {
+    public Activity(int id, int userId, int scheuleID) {
+        this.id = id;
         this.userId = userId;
-        this.name = name;
-        this.date = date;
-        this.startTime = startTime;
-        this.endTime = endTime;
+        ScheuleID = scheuleID;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public int getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(int endTime) {
-        this.endTime = endTime;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public Activity() {
     }
 
     public int getId() {
@@ -57,20 +26,19 @@ public class Activity
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-
-    public int getStartTime() {
-        return startTime;
+    public int getScheduleID() {
+        return ScheduleID;
     }
 
-    public void setStartTime(int numberOfSets) {
-        this.startTime = numberOfSets;
+    public void setScheduleID(int scheduleID) {
+        ScheduleID = scheduleID;
     }
 }
