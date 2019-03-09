@@ -14,9 +14,8 @@ public class Activity
 
     public Activity(){}
 
-    public Activity(int id,int userId, String name, boolean hasSets, int numberOfSets)
+    public Activity(int userId, String name, boolean hasSets, int numberOfSets)
     {
-        this.id = id;
         this.userId = userId;
         this.name = name;
         this.hasSets = hasSets;

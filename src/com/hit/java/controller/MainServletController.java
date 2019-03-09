@@ -38,9 +38,18 @@ public class MainServletController extends HttpServlet
 
         if (path.equals("/activityAdd"))
         {
-            Activity activity = new Activity();
+            Activity activity;
+            String activityName = request.getParameter("activityName");
+            String userId;
 
-            String activityName = request.getParameter("registerUserName");
+            if (activityName != null) {
+                HttpSession session = request.getSession();
+                session.getAttribute("userId",userId);
+
+                if(userId!=null)
+                    activity = new Activity(userId, activityName,true, 0);
+            }
+
 
         }
 
