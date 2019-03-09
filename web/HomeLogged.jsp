@@ -20,13 +20,13 @@
 
   <title>Gym App Agency</title>
   <!-- <link rel="GymAppIcon" href="img/logos/logo_45K_icon.ico" type="image/x-icon" /> -->
-  <link rel="icon" href="img/logos/logo.png">
+  <link rel="icon" href="${pageContext.request.contextPath}/img/logos/logo.png">
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+  <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.css" rel="stylesheet"/>
 
   <!-- Bootstrap Social core CSS -->
-  <link href="vendor/bootstrap-social/bootstrap-social.css" rel="stylesheet" />
+  <link href="${pageContext.request.contextPath}/vendor/bootstrap-social/bootstrap-social.css" rel="stylesheet" />
   <!-- <link href="vendor/bootstrap-social/assets/css/font-awesome.css" rel="stylesheet"> -->
 
   <!-- Custom fonts for this template -->
@@ -37,11 +37,11 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  <link href="css/agency.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/css/agency.css" rel="stylesheet">
 
   <!-- Custom styles for calender -->
-  <link href='css/fullcalendar.css' rel='stylesheet' />
-  <link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
+  <link href='${pageContext.request.contextPath}/css/fullcalendar.css' rel='stylesheet' />
+  <link href='${pageContext.request.contextPath}/css/fullcalendar.print.css' rel='stylesheet' media='print' />
 
 </head>
 
@@ -373,22 +373,22 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/vendor/jquery/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="${pageContext.request.contextPath}/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Contact form JavaScript -->
-<script src="js/jqBootstrapValidation.js"></script>
-<script src="js/contact_me.js"></script>
+<script src="${pageContext.request.contextPath}/js/jqBootstrapValidation.js"></script>
+<script src="${pageContext.request.contextPath}/js/contact_me.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="js/agency.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/agency.min.js"></script>
 
 <!-- Custom Scripts for calender -->
-<script src='js/calendar/moment.js'></script>
-<script src='js/calendar/fullcalendar.js'></script>
+<script src='${pageContext.request.contextPath}/js/calendar/moment.js'></script>
+<script src='${pageContext.request.contextPath}/js/calendar/fullcalendar.js'></script>
 
 <script>
 
