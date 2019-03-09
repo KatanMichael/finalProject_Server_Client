@@ -1,5 +1,6 @@
 package com.hit.java.controller;
 
+import com.hit.java.models.Activity;
 import com.hit.java.models.HibernateGymDAO;
 import com.hit.java.models.RequestListener;
 import com.hit.java.models.User;
@@ -26,6 +27,14 @@ public class MainServletController extends HttpServlet
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
+
+        if (path.equals("/activityAdd"))
+        {
+            Activity activity = new Activity();
+
+            String activityName = request.getParameter("registerUserName");
+
+        }
 
         if (path.equals("/signUp"))
         {
@@ -123,6 +132,7 @@ public class MainServletController extends HttpServlet
                 }
             });
         }
+
         if (path.equals("/personalProfile")) {
 
             String userName = request.getParameter("loginUserName");
