@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import static java.lang.System.out;
@@ -41,7 +42,52 @@ public class MainServletController extends HttpServlet
             String activityName = request.getParameter("activityName");
             Activity activity = new Activity(currentUser.getId(), activityName,"1/1/19",14,16);
 
-            gymDAO.addNewActivity(activity);
+            gymDAO.getActivitiesByUserId(currentUser.getId(), new RequestListener()
+            {
+                @Override
+                public void onComplete(Object o)
+                {
+                    List<Activity> listOfActivities = (List) o;
+
+                    for(Activity a: listOfActivities)
+                    {
+                        if(a.getName().equals(activityName))
+                        {
+                            //Found another activity
+                            sendAlert("Found another activity", response);
+                            try {
+                                getServletContext().getRequestDispatcher("/HomeLogged.jsp")
+                                        .forward(request, response);
+                            } catch (ServletException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }
+
+                 }
+
+                @Override
+                public void onError(String errorMsg)
+                {
+                    gymDAO.addNewActivity(activity);
+
+                    try {
+                        getServletContext().getRequestDispatcher("/HomeLogged.jsp")
+                                .forward(request, response);
+                    } catch (ServletException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            });
+
+
+
 
         }
 
@@ -193,6 +239,21 @@ public class MainServletController extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         doPost(request,response);
+
+    }
+
+
+    public void sendAlert(String alert, HttpServletResponse response) {
+        PrintWriter out = null;
+        try {
+            out = response.getWriter();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        response.setContentType("text/html");
+        out.println("<script type=\"text/javascript\">");
+        out.println("alert('"+alert+"');");
+        out.println("</script>");
 
     }
 

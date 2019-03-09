@@ -25,6 +25,8 @@ public interface IGymDAO
     public void getActivitiesByUserId(int userId, RequestListener listener);
     public void addNewActivity(Activity activity);
 
+
+
     public void addNewSchedule(Schedule schedule);
     public void getScheduleById(int id, RequestListener listener);
     public void getScheduleByDay(int day, RequestListener listener);
