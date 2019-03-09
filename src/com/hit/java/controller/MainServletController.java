@@ -98,9 +98,8 @@ public class MainServletController extends HttpServlet
                                     //save the user data in session scope
                                     HttpSession session = request.getSession();
                                     session.setAttribute("user", tempUser);
-                                    //do your forward or redirect...
 
-                                try {
+                                    try {
                                         requestDispatcher.forward(request, response);
                                     } catch (ServletException e) {
                                         e.printStackTrace();
