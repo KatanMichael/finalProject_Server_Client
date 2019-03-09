@@ -13,8 +13,8 @@
             <column name="USER_ID"/>
         </property>
 
-        <property name="scheduled">
-            <column name="SCHEDULED"/>
+        <property name="scheduleID">
+            <column name="SCHEDULEID"/>
         </property>
 
     </class>

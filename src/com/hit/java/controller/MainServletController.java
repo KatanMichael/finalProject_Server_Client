@@ -26,17 +26,17 @@ public class MainServletController extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
 
-        gymDAO.getAllSchedule(new RequestListener()
-        {
-            @Override
-            public void onComplete(Object o)
-            {
-                allTheSchedule = (List<Schedule>) o;
-            }
-
-            @Override
-            public void onError(String errorMsg) { }
-        });
+//        gymDAO.getAllSchedule(new RequestListener()
+//        {
+//            @Override
+//            public void onComplete(Object o)
+//            {
+//                allTheSchedule = (List<Schedule>) o;
+//            }
+//
+//            @Override
+//            public void onError(String errorMsg) { }
+//        });
 
         if(path.equals("/logout"))
         {
@@ -48,7 +48,9 @@ public class MainServletController extends HttpServlet
 
         if (path.equals("/activityAdd"))
         {
-            int activityID = Integer.parseInt(request.getParameter("activityID"));
+            //int activityID = Integer.parseInt(request.getParameter("activityID"));
+            int activityID = 1;
+
             Activity tempActivity = new Activity(currentUser.getId(),activityID);
 
             gymDAO.getActivitiesByUserId(currentUser.getId(), new RequestListener()
@@ -56,19 +58,37 @@ public class MainServletController extends HttpServlet
                 @Override
                 public void onComplete(Object o)
                 {
+                    boolean found = false;
                     List<Activity> listOfActivities = (List) o;
 
                     for(Activity a: listOfActivities)
                     {
-
+                        if(a.getScheduleID() == activityID)
+                        {
+                            found = true;
+                        }
                     }
+                    if(!found)
+                    {
+                        gymDAO.addNewActivity(tempActivity);
+
+                        try {
+                            getServletContext().getRequestDispatcher("/HomeLogged.jsp")
+                                    .forward(request, response);
+                        } catch (ServletException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
 
                  }
 
                 @Override
                 public void onError(String errorMsg)
                 {
-                    gymDAO.addNewActivity(activity);
+                    gymDAO.addNewActivity(tempActivity);
 
                     try {
                         getServletContext().getRequestDispatcher("/HomeLogged.jsp")
@@ -78,7 +98,6 @@ public class MainServletController extends HttpServlet
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
                 }
             });
 
@@ -238,6 +257,21 @@ public class MainServletController extends HttpServlet
 
     }
 
+    public void addNewActivity(Activity activity,HttpServletRequest request, HttpServletResponse response)
+    {
+
+        gymDAO.addNewActivity(activity);
+
+        try {
+            getServletContext().getRequestDispatcher("/HomeLogged.jsp")
+                    .forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     public void sendAlert(String alert, HttpServletResponse response) {
         PrintWriter out = null;
