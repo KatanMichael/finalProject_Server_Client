@@ -99,6 +99,7 @@ public class MainServletController extends HttpServlet
 
         if (path.equals("/signUp"))
         {
+            HttpSession session = request.getSession();
             User user = new User();
             user.setHeight(1.0f);
             user.setWeight(1.0f);
@@ -128,14 +129,26 @@ public class MainServletController extends HttpServlet
                 {
                     User tempUser = new User(userPassword, userName, 1.1f, 1.1f);
                     gymDAO.addNewUser(tempUser);
+
+                    request.setAttribute("loginUserName", tempUser.getUserName());
+                    request.setAttribute("loginPassword", tempUser.getPassword());
+
+                    session.setAttribute("user", tempUser);
+                    session.setAttribute("userSchedules", currentUserSchedules);
+                    session.setAttribute("userActivities", currentUserActivities);
+
+                    currentUser = tempUser;
+
+                    final RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/HomeLogged.jsp");
+
                     try {
-                        getServletContext().getRequestDispatcher("/Home.jsp")
-                                .forward(request, response);
+                        requestDispatcher.forward(request,response);
                     } catch (ServletException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+
                 }
             });
 
