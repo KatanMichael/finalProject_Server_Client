@@ -256,6 +256,10 @@
     <div id="canvas-holder">
       <canvas id="chart-area"></canvas>
     </div>
+      <br/><br/>
+    <div id="container">
+       <canvas id="canvas"></canvas>
+    </div>
 
   </div>
 </section>
@@ -417,6 +421,7 @@
 <script src="${pageContext.request.contextPath}/js/charts/utils.js"></script>
 
 <script>
+    //pie-chart
   var randomScalingFactor = function() {
     return Math.round(Math.random() * 100);
   };
@@ -432,22 +437,25 @@
           randomScalingFactor(),
           randomScalingFactor(),
           randomScalingFactor(),
+          randomScalingFactor(),
         ],
         backgroundColor: [
           color(chartColors.red).alpha(0.5).rgbString(),
+          color(chartColors.blue).alpha(0.9).rgbString(),
           color(chartColors.orange).alpha(0.5).rgbString(),
-          color(chartColors.yellow).alpha(0.5).rgbString(),
           color(chartColors.green).alpha(0.5).rgbString(),
-          color(chartColors.blue).alpha(0.5).rgbString(),
+          color(chartColors.purple).alpha(0.5).rgbString(),
+          color(chartColors.pink).alpha(0.5).rgbString(),
         ],
         label: 'My dataset' // for legend
       }],
       labels: [
-        'Red',
-        'Orange',
-        'Yellow',
-        'Green',
-        'Blue'
+        'Pilates',
+        'Kickbox',
+        'Zumba',
+        'Weight Training',
+        'Burning Fat',
+        'Spinning',
       ]
     },
     options: {
@@ -457,7 +465,7 @@
       },
       title: {
         display: true,
-        text: 'Chart.js Polar Area Chart'
+        text: 'Burning Calories by each class'
       },
       scale: {
         ticks: {
@@ -472,40 +480,68 @@
     }
   };
 
-  window.onload = function() {
-    var ctx = document.getElementById('chart-area');
-    window.myPolarArea = Chart.PolarArea(ctx, config);
+  //bar chart info
+  var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var color2 = Chart.helpers.color;
+  var barChartData = {
+      labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      datasets: [{
+          label: 'Morning Classes',
+          backgroundColor: color2(window.chartColors.red).alpha(0.5).rgbString(),
+          borderColor: window.chartColors.red,
+          borderWidth: 1,
+          data: [
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor()
+          ]
+      }, {
+          label: 'Night Classes',
+          backgroundColor: color2(window.chartColors.blue).alpha(0.5).rgbString(),
+          borderColor: window.chartColors.blue,
+          borderWidth: 1,
+          data: [
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor(),
+              randomScalingFactor()
+          ]
+      }]
+
   };
 
-  document.getElementById('randomizeData').addEventListener('click', function() {
-    config.data.datasets.forEach(function(piece, i) {
-      piece.data.forEach(function(value, j) {
-        config.data.datasets[i].data[j] = randomScalingFactor();
-      });
-    });
-    window.myPolarArea.update();
-  });
 
-  var colorNames = Object.keys(window.chartColors);
-  document.getElementById('addData').addEventListener('click', function() {
-    if (config.data.datasets.length > 0) {
-      config.data.labels.push('data #' + config.data.labels.length);
-      config.data.datasets.forEach(function(dataset) {
-        var colorName = colorNames[config.data.labels.length % colorNames.length];
-        dataset.backgroundColor.push(window.chartColors[colorName]);
-        dataset.data.push(randomScalingFactor());
+  //mixed on load
+  window.onload = function() {
+      //pie chart
+    var ctx = document.getElementById('chart-area');
+    window.myPolarArea = Chart.PolarArea(ctx, config);
+
+    //bar chart
+      var ctx2 = document.getElementById('canvas').getContext('2d');
+      window.myBar = new Chart(ctx2, {
+          type: 'bar',
+          data: barChartData,
+          options: {
+              responsive: true,
+              legend: {
+                  position: 'top',
+              },
+              title: {
+                  display: true,
+                  text: 'Your fav time of the day for the gym'
+              }
+          }
       });
-      window.myPolarArea.update();
-    }
-  });
-  document.getElementById('removeData').addEventListener('click', function() {
-    config.data.labels.pop(); // remove the label first
-    config.data.datasets.forEach(function(dataset) {
-      dataset.backgroundColor.pop();
-      dataset.data.pop();
-    });
-    window.myPolarArea.update();
-  });
+
+  };
 </script>
 
 </body>
