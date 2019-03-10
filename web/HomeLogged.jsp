@@ -509,7 +509,7 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
-              <!-- Project Details Go Here -->
+              <!-- Activity Details Go Here -->
               <h2 class="text-uppercase">Spinning Class</h2>
 
               <p class="item-intro text-muted">Sign up for Spinning ?
