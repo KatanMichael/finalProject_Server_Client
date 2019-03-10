@@ -232,6 +232,7 @@
                                     No</button>
                             </p>
                             <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/01-full.jpg" alt="">
+
                         </div>
                     </div>
                 </div>
