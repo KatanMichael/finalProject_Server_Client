@@ -711,10 +711,10 @@
 <script src='${pageContext.request.contextPath}/js/calendar/fullcalendar.js'></script>
 
 <script>
-    jQuery.noConflict();
-  $(document).ready(function() {
+  $.noConflict();
+  jQuery(document).ready(function() {
 
-    $('#calendar').fullCalendar({
+    jQuery('#calendar').fullCalendar({
       header: {
         left: ' ',
         center: 'title',
