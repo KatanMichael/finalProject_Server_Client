@@ -216,22 +216,22 @@
                                   </form>
 
                                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                                        <input class="form-control" name="activityID" type="hidden" value="4" aria-hidden="true"/>
+                                        <input class="form-control" name="activityID" type="hidden" value="2" aria-hidden="true"/>
                                         <button type="submit" class="dropdown-item">Monday 9-10am</button>
                                   </form>
 
                                     <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                                        <input class="form-control" name="activityID" type="hidden" value="12" aria-hidden="true"/>
+                                        <input class="form-control" name="activityID" type="hidden" value="3" aria-hidden="true"/>
                                         <button type="submit" class="dropdown-item">Wednesday 10-11pm</button>
                                     </form>
 
                                     <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                                        <input class="form-control" name="activityID" type="hidden" value="19" aria-hidden="true"/>
+                                        <input class="form-control" name="activityID" type="hidden" value="4" aria-hidden="true"/>
                                         <button type="submit" class="dropdown-item">Friday 10-11am</button>
                                     </form>
 
                                     <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                                        <input class="form-control" name="activityID" type="hidden" value="23" aria-hidden="true"/>
+                                        <input class="form-control" name="activityID" type="hidden" value="5" aria-hidden="true"/>
                                         <button type="submit" class="dropdown-item">Saturday 12-1pm</button>
                                     </form>
                                 </div>
@@ -278,17 +278,17 @@
                 <div class="dropdown-menu">
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="2" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="6" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Sunday 12-1pm</button>
                   </form>
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="10" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="7" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Wednesday 10-12am</button>
                   </form>
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="17" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="8" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Friday 7-9am</button>
                   </form>
 
@@ -337,27 +337,27 @@
                 <div class="dropdown-menu">
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="3" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="9" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Sunday 8-10pm</button>
                   </form>
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="6" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="10" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Monday 8-10pm</button>
                   </form>
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="8" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="11" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Tuesday 12-2pm</button>
                   </form>
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="14" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="12" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Thursday 11-1pm</button>
                   </form>
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="18" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="13" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Friday 9-10am</button>
                   </form>
                 </div>
@@ -404,12 +404,12 @@
 
               <div class="dropdown-menu">
                 <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                  <input class="form-control" name="activityID" type="hidden" value="5" aria-hidden="true"/>
+                  <input class="form-control" name="activityID" type="hidden" value="14" aria-hidden="true"/>
                   <button type="submit" class="dropdown-item">Monday 11-1pm</button>
                 </form>
 
                 <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                  <input class="form-control" name="activityID" type="hidden" value="13" aria-hidden="true"/>
+                  <input class="form-control" name="activityID" type="hidden" value="15" aria-hidden="true"/>
                   <button type="submit" class="dropdown-item">Thursday 8-9am</button>
                 </form>
 
@@ -419,7 +419,7 @@
                 </form>
 
                 <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                  <input class="form-control" name="activityID" type="hidden" value="22" aria-hidden="true"/>
+                  <input class="form-control" name="activityID" type="hidden" value="17" aria-hidden="true"/>
                   <button type="submit" class="dropdown-item">Friday 1-2pm</button>
                 </form>
               </div>
@@ -465,17 +465,17 @@
                 <div class="dropdown-menu">
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="7" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="18" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Tuesday 8-10am</button>
                   </form>
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="15" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="19" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Thursday 8-9pm</button>
                   </form>
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="21" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="20" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Friday 12-1pm</button>
                   </form>
 
@@ -524,17 +524,17 @@
                 <div class="dropdown-menu">
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="9" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="21" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Tuesday 8-10pm</button>
                   </form>
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="11" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="22" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Wednesday 4-6pm</button>
                   </form>
 
                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                    <input class="form-control" name="activityID" type="hidden" value="20" aria-hidden="true"/>
+                    <input class="form-control" name="activityID" type="hidden" value="23" aria-hidden="true"/>
                     <button type="submit" class="dropdown-item">Friday 11-12am</button>
                   </form>
 
