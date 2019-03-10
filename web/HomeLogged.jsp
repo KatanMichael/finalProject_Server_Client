@@ -201,15 +201,29 @@
                                 <div class="dropdown-menu">
 
                                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                                    <input class="form-control" name="activityName" type="hidden" value="Pilates" aria-hidden="true"/>
-                                    <button type="submit" class="dropdown-item">Action</button>
+                                    <input class="form-control" name="activityID" type="hidden" value="1" aria-hidden="true"/>
+                                    <button type="submit" class="dropdown-item">Sunday 8-10am</button>
                                   </form>
 
                                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
-                                    <input class="form-control" name="activityName" type="hidden" value="Pilates" aria-hidden="true"/>
-                                    <button type="submit" class="dropdown-item">Another action</button>
+                                        <input class="form-control" name="activityID" type="hidden" value="4" aria-hidden="true"/>
+                                        <button type="submit" class="dropdown-item">Monday 9-10am</button>
                                   </form>
 
+                                    <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                                        <input class="form-control" name="activityID" type="hidden" value="12" aria-hidden="true"/>
+                                        <button type="submit" class="dropdown-item">Wednesday 10-11pm</button>
+                                    </form>
+
+                                    <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                                        <input class="form-control" name="activityID" type="hidden" value="19" aria-hidden="true"/>
+                                        <button type="submit" class="dropdown-item">Friday 10-11am</button>
+                                    </form>
+
+                                    <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                                        <input class="form-control" name="activityID" type="hidden" value="23" aria-hidden="true"/>
+                                        <button type="submit" class="dropdown-item">Saturday 12-1pm</button>
+                                    </form>
                                 </div>
                               </div>
 
@@ -374,7 +388,7 @@
 <script src='${pageContext.request.contextPath}/js/calendar/fullcalendar.js'></script>
 
 <script>
-
+    jQuery.noConflict();
   $(document).ready(function() {
 
     $('#calendar').fullCalendar({
