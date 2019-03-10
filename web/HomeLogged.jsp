@@ -240,7 +240,7 @@
     </div>
 </div>
 
-<!-- Calendar Grid -->
+<!-- Calendar Grid, doesn't work now -->
 <section class="bg-light" id="portfolioCalendar">
   <div class="container">
     <div class="row">
