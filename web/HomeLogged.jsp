@@ -574,7 +574,9 @@
     </div>
 
     <div class="row">
-      <div id="calendar"></div>
+      <div class="embed-responsive embed-responsive-1by1">
+        <iframe class="embed-responsive-item" src="${pageContext.request.contextPath}/calender.jsp"></iframe>
+      </div>
     </div>
 
   </div>
@@ -710,49 +712,6 @@
 <script src='${pageContext.request.contextPath}/js/calendar/moment.js'></script>
 <script src='${pageContext.request.contextPath}/js/calendar/fullcalendar.js'></script>
 
-<script>
-  $.noConflict();
-  jQuery(document).ready(function() {
-
-    jQuery('#calendar').fullCalendar({
-      header: {
-        left: ' ',
-        center: 'title',
-        right: 'agendaWeek'
-      },
-      defaultDate: '2019-03-10',
-      navLinks: true, // can click day/week names to navigate views
-      editable: false,
-      eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          id: ${userSchedules.get(0).getId()},
-          title: ${userSchedules.get(0).getName()},
-          start: '2019-03-10T16:00:00'
-        },
-        {
-          id: 999,
-          title: 'Class2',
-          start: '2019-03-11T09:00:00'
-        },
-        {
-          id: 999,
-          title: 'Class3',
-          start: '2019-03-12T10:00:00'
-        },
-        {
-          id: 999,
-          title: 'Class4',
-          start: '2019-03-13T08:00:00'
-        }
-
-      ]
-    });
-
-  });
-
-</script>
-
 <!-- Charts Scripts -->
 <script src="${pageContext.request.contextPath}/js/charts/Chart.bundle.js"></script>
 <script src="${pageContext.request.contextPath}/js/charts/utils.js"></script>
@@ -877,7 +836,6 @@
               }
           }
       });
-
   };
 </script>
 
