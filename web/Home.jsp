@@ -526,11 +526,12 @@
                 and also in terms of the instructor and practitioner's specific goals and/or limitations.
                 Intensity can be increased over time as the body adapts itself to the exercises.
               </p>
+              <!--
               <ul class="list-inline">
                 <li>Date: Any Sunday 8:00pm</li>
                 <li>Clients: Around 20-30 per class</li>
                 <li>Category: Physical fitness</li>
-              </ul>
+              </ul> -->
               <button class="btn btn-primary" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
                 Close</button>
@@ -570,11 +571,13 @@
                 emergence of mixed martial arts via further hybridisation with ground fighting techniques
                 from Brazilian jiu-jitsu and folk wrestling.
               </p>
+              <!--
               <ul class="list-inline">
                 <li>Date: Any Monday 7:00pm</li>
                 <li>Clients: Around 15-20 per class</li>
                 <li>Category: Martial Art</li>
               </ul>
+              -->
               <button class="btn btn-primary" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
                 Close</button>
@@ -618,11 +621,13 @@
                 The music comes from the following dance styles: cumbia, salsa, merengue, mambo,
                 flamenco, chachacha, reggaeton, soca, samba, hip hop music, axé music and tango.
               </p>
+              <!--
               <ul class="list-inline">
                 <li>Date: Any Tuesday 7:30pm and Thursday 10:00am</li>
                 <li>Clients: Around 30-40 per class</li>
                 <li>Category: Dancing & Fitness</li>
               </ul>
+              -->
               <button class="btn btn-primary" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
                 Close</button>
@@ -658,11 +663,12 @@
                 contraction. Weight training uses a variety of specialized equipment to target specific muscle
                 groups and types of movement.
               </p>
+              <!--
               <ul class="list-inline">
                 <li>Date: Any Day at 9:00pm</li>
                 <li>Clients: Free for all</li>
                 <li>Category: Strength Training</li>
-              </ul>
+              </ul> -->
               <button class="btn btn-primary" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
                 Close</button>
@@ -698,11 +704,13 @@
                 improve mitochondria function, which then promotes fat breakdown, Seedman adds.
                 Plus, working out helps regulate pretty much all the hormones that optimize fat loss.
               </p>
+              <!--
               <ul class="list-inline">
                 <li>Date: Any Day at 6:00pm & 11:00am</li>
                 <li>Clients: Free for all class</li>
                 <li>Category: General Training</li>
               </ul>
+              -->
               <button class="btn btn-primary" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
                 Close</button>
@@ -737,11 +745,13 @@
                 (race days) and recovery, and involves using a special stationary exercise bicycle
                 with a weighted flywheel in a classroom setting.
               </p>
+              <!--
               <ul class="list-inline">
                 <li>Date: Any Thursday at 9:00pm</li>
                 <li>Clients: Around 20-30 per class</li>
                 <li>Category: Intense Training</li>
               </ul>
+              -->
               <button class="btn btn-primary" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
                 Close</button>

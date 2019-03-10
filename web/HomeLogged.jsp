@@ -111,20 +111,24 @@
         </p>
       </div>
       <div class="col-md-4">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
             <span class="fa-stack fa-4x">
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
             </span>
+        </a>
         <h4 class="service-heading">KickBoxing</h4>
         <p class="text-muted">
           Train Like A Champ.
         </p>
       </div>
       <div class="col-md-4">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
             <span class="fa-stack fa-4x">
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-users fa-stack-1x fa-inverse"></i>
             </span>
+        </a>
         <h4 class="service-heading">Zumba</h4>
         <p class="text-muted">
           Train Like A Champ.
@@ -134,32 +138,38 @@
 
     <div class="row text-center">
       <div class="col-md-4">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
             <span class="fa-stack fa-4x">
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-cog fa-stack-1x fa-fw fa-inverse"></i>
             </span>
+        </a>
         <h4 class="service-heading">Weight Training</h4>
         <p class="text-muted">
           Train Like A Champ.
         </p>
       </div>
       <div class="col-md-4">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
             <span class="fa-stack fa-4x">
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-fire fa-stack-1x fa-inverse"></i>
             </span>
+        </a>
         <h4 class="service-heading">Burning Fat</h4>
         <p class="text-muted">
           Train Like A Champ.
         </p>
       </div>
       <div class="col-md-4">
+        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
             <span class="fa-stack fa-4x">
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
               <!-- <i class="fas fa-lock fa-stack-1x fa-inverse"></i> -->
               <!-- <i class="fa fa-cog fa-spin fa-1x fa-fw fa-inverse"></i> -->
               <i class="fa fa-bicycle fa-stack-1x fa-inverse"></i>
             </span>
+        </a>
         <h4 class="service-heading">Spinning</h4>
         <p class="text-muted">
           Train Like A Champ.
@@ -240,6 +250,318 @@
         </div>
     </div>
 </div>
+
+<!-- Modal 2 -->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Kickboxing Class</h2>
+              <p class="item-intro text-muted">Sign up for Kickboxing ?
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-success dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-check"></i>
+                  Yes
+                </button>
+
+                <div class="dropdown-menu">
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="2" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Sunday 12-1pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="10" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Wednesday 10-12am</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="17" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Friday 7-9am</button>
+                  </form>
+
+                </div>
+              </div>
+
+              <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                No</button>
+              </p>
+
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/02-full.jpg" alt="">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Zumba Class</h2>
+              <p class="item-intro text-muted">Sign up for Zumba ?
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-success dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-check"></i>
+                  Yes
+                </button>
+
+                <div class="dropdown-menu">
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="3" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Sunday 8-10pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="6" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Monday 8-10pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="8" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Tuesday 12-2pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="14" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Thursday 11-1pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="18" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Friday 9-10am</button>
+                  </form>
+                </div>
+              </div>
+
+              <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                No</button>
+              </p>
+
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/03-full.jpg" alt="">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Weight Training Class</h2>
+              <p class="item-intro text-muted">Sign up for Weight Training ?
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-success dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-check"></i>
+                  Yes
+                </button>
+
+              <div class="dropdown-menu">
+                <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                  <input class="form-control" name="activityID" type="hidden" value="5" aria-hidden="true"/>
+                  <button type="submit" class="dropdown-item">Monday 11-1pm</button>
+                </form>
+
+                <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                  <input class="form-control" name="activityID" type="hidden" value="13" aria-hidden="true"/>
+                  <button type="submit" class="dropdown-item">Thursday 8-9am</button>
+                </form>
+
+                <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                  <input class="form-control" name="activityID" type="hidden" value="16" aria-hidden="true"/>
+                  <button type="submit" class="dropdown-item">Thursday 9-10pm</button>
+                </form>
+
+                <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                  <input class="form-control" name="activityID" type="hidden" value="22" aria-hidden="true"/>
+                  <button type="submit" class="dropdown-item">Friday 1-2pm</button>
+                </form>
+              </div>
+
+              <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                No</button>
+            </div>
+              </p>
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/04-full.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Burnning Fat Class</h2>
+              <p class="item-intro text-muted">Sign up for Burnning Fat ?
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-success dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-check"></i>
+                  Yes
+                </button>
+
+                <div class="dropdown-menu">
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="7" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Tuesday 8-10am</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="15" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Thursday 8-9pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="21" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Friday 12-1pm</button>
+                  </form>
+
+                </div>
+              </div>
+
+              <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                No</button>
+              </p>
+
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/05-full.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6 -->
+<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">Spinning Class</h2>
+
+              <p class="item-intro text-muted">Sign up for Spinning ?
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-success dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-check"></i>
+                  Yes
+                </button>
+
+                <div class="dropdown-menu">
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="9" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Tuesday 8-10pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="11" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Wednesday 4-6pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="20" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Friday 11-12am</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="24" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Saturday 5-7pm</button>
+                  </form>
+
+                </div>
+              </div>
+
+              <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
+                <i class="fas fa-times"></i>
+                No</button>
+              </p>
+
+              <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/06-full.png" alt="">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- Calendar Grid, doesn't work now -->
 <section class="bg-light" id="portfolioCalendar">
