@@ -67,6 +67,9 @@
 <script>
     $(document).ready(function() {
 
+        var i;
+
+
         $('#calendar').fullCalendar({
             header: {
                 left: ' ',
@@ -79,9 +82,10 @@
             eventLimit: true, // allow "more" link when too many events
             events: [
                 {
-                    id: 111,
-                    title: 'blah01',
-                    start: '2019-03-10T16:00:00'
+                    id: ${userSchedules[0].id},
+                    title: '${userSchedules[0].name}',
+                    start: '2019-03-10T09:00:00',
+                    end: '2019-03-10T10:00:00'
                 },
                 {
                     id: 999,
