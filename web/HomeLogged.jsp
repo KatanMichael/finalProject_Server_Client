@@ -3,6 +3,7 @@
 <%@ page import="com.hit.java.models.Activity" %>
 <%@ page import="com.hit.java.models.Schedule" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -913,7 +914,13 @@
 <script>
     //pie-chart
   var randomScalingFactor = function() {
-    return Math.round(Math.random() * 100);
+    var sum=0;
+    <%ArrayList<Schedule> currentUserSchedules = (ArrayList<Schedule>)request.getAttribute("userSchedules2");
+      for(Schedule s:currentUserSchedules){%>
+          sum=sum+ <%=s.getCalories()%>;
+    <%}%>
+    return sum;
+
   };
 
   var chartColors = window.chartColors;

@@ -28,6 +28,11 @@
         <property name="end">
             <column name="END"/>
         </property>
+
+        <property name="calories">
+            <column name="CALORIES"/>
+        </property>
+
     </class>
 
 </hibernate-mapping>

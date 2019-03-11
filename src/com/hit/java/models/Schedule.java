@@ -12,15 +12,17 @@ public class Schedule {
     private int day;
     private int start;
     private int end;
+    private int calories;
 
     public Schedule(){}
 
-    public Schedule(int activityId, String name, int day, int start, int end) {
+    public Schedule(int activityId, String name, int day, int start, int end, int calories) {
         this.activityId = activityId;
         this.name = name;
         this.day = day;
         this.start = start;
         this.end = end;
+        this.calories = calories;
     }
 
     @Override
@@ -82,5 +84,14 @@ public class Schedule {
 
     public int getEnd() {
         return end;
+    }
+
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 }

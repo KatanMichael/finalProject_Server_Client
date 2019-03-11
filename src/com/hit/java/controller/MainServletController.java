@@ -236,6 +236,7 @@ public class MainServletController extends HttpServlet
                                                 });
                                             }
                                             session.setAttribute("userSchedules", currentUserSchedules);
+                                            request.setAttribute("userSchedules2",currentUserSchedules);
                                         }
 
                                         @Override
