@@ -913,11 +913,17 @@
 
 <script>
     //pie-chart
-  var randomScalingFactor = function() {
-    var sum=0;
-    <%ArrayList<Schedule> currentUserSchedules = (ArrayList<Schedule>)request.getAttribute("userSchedules2");
+  var pilates = function() {
+      var sum=0;
+      var y=0;
+      var x=0;
+      <%ArrayList<Schedule> currentUserSchedules = (ArrayList<Schedule>)request.getAttribute("userSchedules2");
       for(Schedule s:currentUserSchedules){%>
-          sum=sum+ <%=s.getCalories()%>;
+           y = <%=s.getActivityId()%>;
+            if (y === 1) {
+            x = <%=s.getCalories()%>;
+            sum = sum + x;
+    }
     <%}%>
     return sum;
 
@@ -929,7 +935,7 @@
     data: {
       datasets: [{
         data: [
-          randomScalingFactor(),
+          pilates(),
           randomScalingFactor(),
           randomScalingFactor(),
           randomScalingFactor(),
