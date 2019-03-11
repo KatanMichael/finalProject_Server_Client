@@ -221,7 +221,7 @@ public class MainServletController extends HttpServlet
                                             currentUserSchedules = new ArrayList<>();
                                             for(int i = 0; i < currentUserActivities.size(); i++)
                                             {
-                                                gymDAO.getScheduleById(currentUserActivities.get(i).getId(), new RequestListener()
+                                                gymDAO.getScheduleById(currentUserActivities.get(i).getScheduleID(), new RequestListener()
                                                 {
                                                     @Override
                                                     public void onComplete(Object o)
