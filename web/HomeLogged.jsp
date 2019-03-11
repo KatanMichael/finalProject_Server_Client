@@ -783,7 +783,8 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase">See Your Progress</h2>
-        <h3 class="section-subheading text-muted">via these charts: </h3>
+        <h3 class="section-subheading text-muted">via charts </h3>
+        <button type="button" class="btn btn-dark" onclick="loadChartsAgain()">Load Charts</button>
       </div>
     </div>
 
@@ -1052,7 +1053,8 @@
 
 
   //mixed on load
-  window.onload = function() {
+  window.onload = function()
+  {
       //pie chart
     var ctx = document.getElementById('chart-area');
     window.myPolarArea = Chart.PolarArea(ctx, config);
@@ -1074,6 +1076,30 @@
           }
       });
   };
+
+    function loadChartsAgain()
+    {
+      //pie chart
+      var ctxA = document.getElementById('chart-area');
+      window.myPolarArea = Chart.PolarArea(ctxA, config);
+
+      //bar chart
+      var ctxA2 = document.getElementById('canvas').getContext('2d');
+      window.myBar = new Chart(ctxA2, {
+        type: 'bar',
+        data: barChartData,
+        options: {
+          responsive: true,
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Your fav time of the day for the gym'
+          }
+        }
+      });
+    }
 </script>
 
 </body>
