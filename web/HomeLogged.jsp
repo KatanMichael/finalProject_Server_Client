@@ -913,21 +913,113 @@
 
 <script>
     //pie-chart
+    <%ArrayList<Schedule> currentUserSchedules = (ArrayList<Schedule>)request.getAttribute("userSchedules2")%>
   var pilates = function() {
       var sum=0;
       var y=0;
       var x=0;
-      <%ArrayList<Schedule> currentUserSchedules = (ArrayList<Schedule>)request.getAttribute("userSchedules2");
+      <%
       for(Schedule s:currentUserSchedules){%>
-           y = <%=s.getActivityId()%>;
-            if (y === 1) {
-            x = <%=s.getCalories()%>;
-            sum = sum + x;
-    }
-    <%}%>
-    return sum;
+      y = <%=s.getActivityId()%>;
+      if (y == 1) {
+        x = <%=s.getCalories()%>;
+        sum = sum + x;
+      }
+      <%}%>
+      return sum;
 
-  };
+    };
+
+    var kickbox = function() {
+      var sum=0;
+      var y=0;
+      var x=0;
+      <%
+      for(Schedule s:currentUserSchedules){%>
+      y = <%=s.getActivityId()%>;
+      if (y == 2) {
+        x = <%=s.getCalories()%>;
+        sum = sum + x;
+      }
+      <%}%>
+      return sum;
+    };
+
+    var zumba = function() {
+      var sum=0;
+      var y=0;
+      var x=0;
+      <%
+      for(Schedule s:currentUserSchedules){%>
+      y = <%=s.getActivityId()%>;
+      if (y == 3) {
+        x = <%=s.getCalories()%>;
+        sum = sum + x;
+      }
+      <%}%>
+      return sum;
+    };
+
+    var zumba = function() {
+      var sum=0;
+      var y=0;
+      var x=0;
+      <%
+      for(Schedule s:currentUserSchedules){%>
+      y = <%=s.getActivityId()%>;
+      if (y == 3) {
+        x = <%=s.getCalories()%>;
+        sum = sum + x;
+      }
+      <%}%>
+      return sum;
+    };
+
+    var weightTraining = function() {
+      var sum=0;
+      var y=0;
+      var x=0;
+      <%
+      for(Schedule s:currentUserSchedules){%>
+      y = <%=s.getActivityId()%>;
+      if (y == 4) {
+        x = <%=s.getCalories()%>;
+        sum = sum + x;
+      }
+      <%}%>
+      return sum;
+    };
+
+    var burningFat = function() {
+      var sum=0;
+      var y=0;
+      var x=0;
+      <%
+      for(Schedule s:currentUserSchedules){%>
+      y = <%=s.getActivityId()%>;
+      if (y == 5) {
+        x = <%=s.getCalories()%>;
+        sum = sum + x;
+      }
+      <%}%>
+      return sum;
+    };
+
+    var spinning = function() {
+      var sum=0;
+      var y=0;
+      var x=0;
+      <%
+      for(Schedule s:currentUserSchedules){%>
+      y = <%=s.getActivityId()%>;
+      if (y == 6) {
+        x = <%=s.getCalories()%>;
+        sum = sum + x;
+      }
+      <%}%>
+      return sum;
+    };
+
 
   var chartColors = window.chartColors;
   var color = Chart.helpers.color;
@@ -936,11 +1028,11 @@
       datasets: [{
         data: [
           pilates(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
+          kickbox(),
+          zumba(),
+          weightTraining(),
+          burningFat(),
+          spinning(),
         ],
         backgroundColor: [
           color(chartColors.red).alpha(0.5).rgbString(),
