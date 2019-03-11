@@ -185,6 +185,9 @@ public class MainServletController extends HttpServlet
 
         }
 
+        /**
+         * when a user logged in, all his data cached locally(activities and schedule)
+         */
         if (path.equals("/login")) {
             String userName = request.getParameter("loginUserName");
             String userPassword = request.getParameter("loginPassword");
@@ -256,8 +259,7 @@ public class MainServletController extends HttpServlet
                                         e.printStackTrace();
                                     }
 
-                                }
-                            } else {
+                                } } else {
                                 out.println("Wrong Password");
                             }
 
@@ -327,20 +329,4 @@ public class MainServletController extends HttpServlet
         doPost(request,response);
 
     }
-
-
-    public void sendAlert(String alert, HttpServletResponse response) {
-        PrintWriter out = null;
-        try {
-            out = response.getWriter();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        response.setContentType("text/html");
-        out.println("<script type=\"text/javascript\">");
-        out.println("alert('"+alert+"');");
-        out.println("</script>");
-
-    }
-
 }

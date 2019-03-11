@@ -23,6 +23,10 @@ public class HibernateGymDAO implements IGymDAO
     private HibernateGymDAO() { }
 
 
+    /**
+     *
+     * @param listener - Callback interface
+     */
     @Override
     public void getAllUsers(RequestListener listener)
     {
@@ -50,8 +54,14 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
+    /**
+     *
+     * @param userId - userId for database Query
+     * @param listener - Callback interface
+     * @return
+     */
     @Override
-    public User getUserbyId(int queryId, RequestListener listener)
+    public User getUserbyId(int userId, RequestListener listener)
     {
         sessionFactory =  new AnnotationConfiguration().
                 configure().buildSessionFactory();
@@ -60,7 +70,7 @@ public class HibernateGymDAO implements IGymDAO
 
         session.beginTransaction();
 
-        final List list = session.createQuery("from User u WHERE u.id = '"+queryId+"'").list();
+        final List list = session.createQuery("from User u WHERE u.id = '"+userId+"'").list();
 
         if(list.size() == 0)
         {
@@ -75,6 +85,12 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
+    /**
+     *
+     * @param name - userName for Query
+     * @param listener - Callback interface
+     * @return
+     */
     @Override
     public List getUsersByName(String name, RequestListener listener)
     {
@@ -98,6 +114,11 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
+    /**
+     *
+     * @param weight -User weight for Query
+     * @param listener - Callback interface
+     */
     @Override
     public void getUserByWeight(double weight, RequestListener listener)
     {
@@ -118,6 +139,11 @@ public class HibernateGymDAO implements IGymDAO
         }
     }
 
+    /**
+     *
+     * @param height - user height for Query
+     * @param listener - Callback interface
+     */
     @Override
     public void getUserByHeight(double height, RequestListener listener)
     {
@@ -139,6 +165,10 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
+    /**
+     * The Method added new user to the database
+     * @param user - adding the user to the database
+     */
     @Override
     public void addNewUser(User user)
     {
@@ -165,6 +195,10 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
+    /**
+     *
+     * @param userName - userName to delete from the dataBae
+     */
     @Override
     public void deleteUser(String userName)
     {
@@ -200,6 +234,10 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
+    /**
+     *
+     * @param user - user to update in the database
+     */
     @Override
     public void updateUser(User user)
     {
@@ -219,6 +257,11 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
+    /**
+     *
+     * @param id - get specific activity by id
+     * @param listener - Callback interface
+     */
     @Override
     public void getActivityById(int id, RequestListener listener)
     {
@@ -241,7 +284,11 @@ public class HibernateGymDAO implements IGymDAO
     }
 
 
-
+    /**
+     *
+     * @param userId - get all the activities of specific user
+     * @param listener - Callback interface
+     */
     public void getActivitiesByUserId(int userId, RequestListener listener)
     {
         sessionFactory = new AnnotationConfiguration().
@@ -262,6 +309,10 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
+    /**
+     * The method retrieve all the activities in the dataBase
+     * @param listener - Callback interface
+     */
     public void getAllActivities(RequestListener listener)
     {
         sessionFactory = new AnnotationConfiguration().
@@ -284,6 +335,10 @@ public class HibernateGymDAO implements IGymDAO
         sessionFactory.close();
     }
 
+    /**
+     * The Method add new activity to the database
+     * @param activity - new activity to add to the database
+     */
     @Override
     public void addNewActivity(Activity activity)
     {
@@ -303,8 +358,12 @@ public class HibernateGymDAO implements IGymDAO
         sessionFactory.close();
     }
 
+    /**
+     *The method remove spacific activity from the database
+     * @param activity - activity to remove from the database
+     */
     @Override
-    public void removeActivityById(Activity a)
+    public void removeActivityById(Activity activity)
     {
         sessionFactory = new AnnotationConfiguration().
                 configure().buildSessionFactory();
@@ -313,7 +372,7 @@ public class HibernateGymDAO implements IGymDAO
 
         session.beginTransaction();
 
-        session.delete(a);
+        session.delete(activity);
 
         session.getTransaction().commit();
 
@@ -321,6 +380,10 @@ public class HibernateGymDAO implements IGymDAO
         sessionFactory.close();
     }
 
+    /**
+     *
+     * @param schedule - Add new schedule to the database
+     */
     @Override
     public void addNewSchedule(Schedule schedule)
     {
@@ -342,6 +405,11 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
+    /**
+     *
+     * @param id - get specific Schedule by id
+     * @param listener - Callback interface
+     */
     @Override
     public void getScheduleById(int id, RequestListener listener)
     {
@@ -363,6 +431,11 @@ public class HibernateGymDAO implements IGymDAO
 
     }
 
+    /**
+     *
+     * @param day - get all the Schedule on a specific day
+     * @param listener - Callback interface
+     */
     @Override
     public void getScheduleByDay(int day, RequestListener listener)
     {
@@ -384,6 +457,10 @@ public class HibernateGymDAO implements IGymDAO
         }
     }
 
+    /**
+     * The method retrieve all the gym Schedule
+     * @param listener - Callback interface
+     */
     public void getAllSchedule(RequestListener listener)
     {
         sessionFactory = new AnnotationConfiguration().
