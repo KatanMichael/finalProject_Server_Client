@@ -67,16 +67,19 @@
 <script>
     $(document).ready(function() {
 
-        var i;
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
 
 
         $('#calendar').fullCalendar({
             header: {
-                left: ' ',
+                left: 'prev,next today',
                 center: 'title',
-                right: 'agendaWeek'
+                right: 'month,agendaWeek,agendaDay,listWeek'
             },
-            defaultDate: '2019-03-10',
+            defaultDate: date,
             navLinks: true, // can click day/week names to navigate views
             editable: false,
             eventLimit: true, // allow "more" link when too many events
@@ -84,23 +87,20 @@
                 {
                     id: ${userSchedules[0].id},
                     title: '${userSchedules[0].name}',
-                    start: '2019-03-10T09:00:00',
-                    end: '2019-03-10T10:00:00'
+                    start: new Date(y, m, ${userSchedules[0].day}-1+d , ${userSchedules[0].start}-1, 0),
+                    end: new Date(y, m, ${userSchedules[0].day}-1+d, ${userSchedules[0].end}, 0)
                 },
                 {
-                    id: 999,
-                    title: 'Class2',
-                    start: '2019-03-11T09:00:00'
+                    id: ${userSchedules[1].id},
+                    title: '${userSchedules[1].name}',
+                    start: new Date(y, m, ${userSchedules[1].day}-1+d , ${userSchedules[1].start}-1, 0),
+                    end: new Date(y, m, ${userSchedules[1].day}-1+d, ${userSchedules[1].end}, 0)
                 },
                 {
-                    id: 888,
-                    title: 'Class3',
-                    start: '2019-03-12T10:00:00'
-                },
-                {
-                    id: 222,
-                    title: 'Class4',
-                    start: '2019-03-13T08:00:00'
+                    id: ${userSchedules[2].id},
+                    title: '${userSchedules[2].name}',
+                    start: new Date(y, m, ${userSchedules[2].day}-1+d , ${userSchedules[2].start}-1, 0),
+                    end: new Date(y, m, ${userSchedules[2].day}-1+d, ${userSchedules[2].end}, 0)
                 }
 
             ]

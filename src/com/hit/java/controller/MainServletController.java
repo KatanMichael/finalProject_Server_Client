@@ -97,6 +97,11 @@ public class MainServletController extends HttpServlet
             });
         }
 
+        if (path.equals("/activityRemove"))
+        {
+
+        }
+
         if (path.equals("/signUp"))
         {
             HttpSession session = request.getSession();

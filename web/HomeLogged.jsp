@@ -165,8 +165,6 @@
         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
             <span class="fa-stack fa-4x">
               <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <!-- <i class="fas fa-lock fa-stack-1x fa-inverse"></i> -->
-              <!-- <i class="fa fa-cog fa-spin fa-1x fa-fw fa-inverse"></i> -->
               <i class="fa fa-bicycle fa-stack-1x fa-inverse"></i>
             </span>
         </a>
@@ -209,6 +207,7 @@
                                 </button>
 
                                 <div class="dropdown-menu">
+                                  <!-- drop down add items here -->
 
                                   <form action="${pageContext.request.contextPath}/controller/activityAdd" method="post">
                                     <input class="form-control" name="activityID" type="hidden" value="1" aria-hidden="true"/>
@@ -236,6 +235,44 @@
                                     </form>
                                 </div>
                               </div>
+
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-check"></i>
+                              Remove Classes
+                            </button>
+
+                            <div class="dropdown-menu">
+                              <!-- drop down delete items here -->
+
+                              <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                                <input class="form-control" name="activityID" type="hidden" value="1" aria-hidden="true"/>
+                                <button type="submit" class="dropdown-item">Sunday 8-10am</button>
+                              </form>
+
+                              <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                                <input class="form-control" name="activityID" type="hidden" value="2" aria-hidden="true"/>
+                                <button type="submit" class="dropdown-item">Monday 9-10am</button>
+                              </form>
+
+                              <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                                <input class="form-control" name="activityID" type="hidden" value="3" aria-hidden="true"/>
+                                <button type="submit" class="dropdown-item">Wednesday 10-11pm</button>
+                              </form>
+
+                              <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                                <input class="form-control" name="activityID" type="hidden" value="4" aria-hidden="true"/>
+                                <button type="submit" class="dropdown-item">Friday 10-11am</button>
+                              </form>
+
+                              <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                                <input class="form-control" name="activityID" type="hidden" value="5" aria-hidden="true"/>
+                                <button type="submit" class="dropdown-item">Saturday 12-1pm</button>
+                              </form>
+
+                            </div>
+                          </div>
 
                                 <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
                                     <i class="fas fa-times"></i>
