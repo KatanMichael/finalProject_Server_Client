@@ -1,0 +1,35 @@
+1 - Pilates Class
+v - Sunday 8-10am
+v - Monday 9-10am
+v - Wednesday 10-11pm
+v - Friday 10-11am
+Saturday 12-1pm
+
+2 - Kickboxing Class
+v - Sunday 12-1pm
+v - Wednesday 10-12am
+v - Friday 7-9am
+
+3 - Zumba Class
+v - Sunday 8-10pm
+v - Monday 8-10pm
+v - Tuesday 12-2pm
+v - Thursday 11-1pm
+v - Friday 9-10am
+
+4 - Weight Training Class
+v - Monday 11-1pm
+v - Thursday 8-9am
+v - Thursday 9-10pm
+v - Friday 1-2pm
+
+5 - Burning Fat Class
+v - Tuesday 8-10am
+v - Thursday 8-9pm
+v - Friday 12-1pm
+
+6 - Spinning Class
+v - Tuesday 8-10pm
+v - Wednesday 4-6pm
+v - Friday 11-12am
+v- Saturday 5-7pm

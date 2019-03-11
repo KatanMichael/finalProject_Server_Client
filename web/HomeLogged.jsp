@@ -759,7 +759,7 @@
 
 
 <!-- Calendar Grid, doesn't work now -->
-<section class="bg-light" id="portfolio">
+<section class="bg-light" id="portfolioCalendar">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -985,7 +985,7 @@
   };
 
   //bar chart info
-    var calcDaysGym = function(d,t) {
+  var calcDaysGym = function(d,t) {
       var sum2=0;
       var y2;
       var temp=0;
@@ -1051,7 +1051,6 @@
 
   };
 
-
   //mixed on load
   window.onload = function()
   {
@@ -1079,26 +1078,26 @@
 
     function loadChartsAgain()
     {
-      //pie chart
-      var ctxA = document.getElementById('chart-area');
-      window.myPolarArea = Chart.PolarArea(ctxA, config);
+        //pie chart
+        var ctx = document.getElementById('chart-area');
+        window.myPolarArea = Chart.PolarArea(ctx, config);
 
-      //bar chart
-      var ctxA2 = document.getElementById('canvas').getContext('2d');
-      window.myBar = new Chart(ctxA2, {
-        type: 'bar',
-        data: barChartData,
-        options: {
-          responsive: true,
-          legend: {
-            position: 'top',
-          },
-          title: {
-            display: true,
-            text: 'Your fav time of the day for the gym'
-          }
-        }
-      });
+        //bar chart
+        var ctx2 = document.getElementById('canvas').getContext('2d');
+        window.myBar = new Chart(ctx2, {
+            type: 'bar',
+            data: barChartData,
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Your fav time of the day for the gym'
+                }
+            }
+        });
     }
 </script>
 

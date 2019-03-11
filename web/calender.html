@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 1
-  Date: 13/01/2019
-  Time: 14:24
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,24 +7,20 @@
 
 <title>Gym App Agency</title>
 <!-- <link rel="GymAppIcon" href="img/logos/logo_45K_icon.ico" type="image/x-icon" /> -->
-<link rel="icon" href="${pageContext.request.contextPath}/img/logos/logo.png">
+<link rel="icon" href="img/logos/logo.png">
 
 <!-- Bootstrap core CSS -->
-<link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-
-<!-- Bootstrap Social core CSS -->
-<link href="${pageContext.request.contextPath}/vendor/bootstrap-social/bootstrap-social.css" rel="stylesheet" />
-<!-- <link href="vendor/bootstrap-social/assets/css/font-awesome.css" rel="stylesheet"> -->
+<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet"/>
 
 <!-- Custom fonts for this template -->
-<link href="${pageContext.request.contextPath}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
 <!-- Custom styles for this template -->
-<link href="${pageContext.request.contextPath}/css/agency.css" rel="stylesheet">
+<link href="css/agency.css" rel="stylesheet">
 
 <style>
     .codyhouse {
@@ -708,6 +697,8 @@
 <div class="cd-schedule loading">
     <div class="timeline">
         <ul>
+            <li><span>07:00</span></li>
+            <li><span>08:00</span></li>
             <li><span>09:00</span></li>
             <li><span>10:00</span></li>
             <li><span>11:00</span></li>
@@ -729,195 +720,186 @@
 
     <div class="events">
         <ul>
-            <!-- Sunday -->
             <li class="events-group">
                 <div class="top-info"><span>Sunday</span></div>
 
                 <ul>
-                    <li class="single-event" data-start="08:00" data-end="10:00" data-content="event-pilates" data-event="event-1">
+                    <li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
                         <a href="#0">
-                            <em class="event-name">Pilates Class</em>
+                            <em class="event-name">Abs Circuit</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-kickboxing" data-event="event-2">
+                    <li class="single-event" data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2">
                         <a href="#0">
-                            <em class="event-name">Kickboxing Class</em>
+                            <em class="event-name">Rowing Workout</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="20:00" data-end="22:00"  data-content="event-zumba" data-event="event-3">
+                    <li class="single-event" data-start="14:00" data-end="15:15"  data-content="event-yoga-1" data-event="event-3">
                         <a href="#0">
-                            <em class="event-name">Zumba Class</em>
+                            <em class="event-name">Yoga Level 1</em>
                         </a>
                     </li>
                 </ul>
             </li>
-
-            <!-- Monday -->
             <li class="events-group">
                 <div class="top-info"><span>Monday</span></div>
 
                 <ul>
-                    <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-pilates" data-event="event-1">
+                    <li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
                         <a href="#0">
-                            <em class="event-name">Pilates Class</em>
+                            <em class="event-name">Abs Circuit</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="08:00" data-end="10:00" data-content="event-zumba" data-event="event-3">
+                    <li class="single-event" data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2">
                         <a href="#0">
-                            <em class="event-name">Zumba Class</em>
+                            <em class="event-name">Rowing Workout</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="11:00" data-end="13:00"  data-content="event-weight-training" data-event="event-4">
+                    <li class="single-event" data-start="14:00" data-end="15:15"  data-content="event-yoga-1" data-event="event-3">
                         <a href="#0">
-                            <em class="event-name">Weight Training Class</em>
+                            <em class="event-name">Yoga Level 1</em>
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <!-- Tuesday -->
             <li class="events-group">
                 <div class="top-info"><span>Tuesday</span></div>
 
                 <ul>
-                    <li class="single-event" data-start="12:00" data-end="14:00"  data-content="event-zumba" data-event="event-3">
+                    <li class="single-event" data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2">
                         <a href="#0">
-                            <em class="event-name">Zumba Class</em>
+                            <em class="event-name">Rowing Workout</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="08:00" data-end="10:00"  data-content="event-burning-fat" data-event="event-5">
+                    <li class="single-event" data-start="11:30" data-end="13:00"  data-content="event-restorative-yoga" data-event="event-4">
                         <a href="#0">
-                            <em class="event-name">Burning Fat Class</em>
+                            <em class="event-name">Restorative Yoga</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="20:00" data-end="22:00" data-content="event-spinning" data-event="event-6">
+                    <li class="single-event" data-start="13:30" data-end="15:00" data-content="event-abs-circuit" data-event="event-1">
                         <a href="#0">
-                            <em class="event-name">Spinning Class</em>
+                            <em class="event-name">Abs Circuit</em>
+                        </a>
+                    </li>
+
+                    <li class="single-event" data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3">
+                        <a href="#0">
+                            <em class="event-name">Yoga Level 1</em>
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <!-- Wednesday -->
             <li class="events-group">
                 <div class="top-info"><span>Wednesday</span></div>
 
                 <ul>
-                    <li class="single-event" data-start="22:00" data-end="23:00" data-content="event-pilates" data-event="event-1">
+                    <li class="single-event" data-start="09:00" data-end="10:15" data-content="event-restorative-yoga" data-event="event-4">
                         <a href="#0">
-                            <em class="event-name">Pilates Class</em>
+                            <em class="event-name">Restorative Yoga</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="10:00" data-end="12:00" data-content="event-yoga-1" data-event="event-2">
+                    <li class="single-event" data-start="10:45" data-end="11:45" data-content="event-yoga-1" data-event="event-3">
                         <a href="#0">
-                            <em class="event-name">Kickboxing Class</em>
+                            <em class="event-name">Yoga Level 1</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="16:00" data-end="18:00" data-content="event-spinning" data-event="event-6">
+                    <li class="single-event" data-start="12:00" data-end="13:45"  data-content="event-rowing-workout" data-event="event-2">
                         <a href="#0">
-                            <em class="event-name">Spinning Class</em>
+                            <em class="event-name">Rowing Workout</em>
+                        </a>
+                    </li>
+
+                    <li class="single-event" data-start="13:45" data-end="15:00" data-content="event-yoga-1" data-event="event-3">
+                        <a href="#0">
+                            <em class="event-name">Yoga Level 1</em>
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <!-- Thursday -->
             <li class="events-group">
                 <div class="top-info"><span>Thursday</span></div>
 
                 <ul>
-                    <li class="single-event" data-start="11:00" data-end="13:00" data-content="event-zumba" data-event="event-3">
+                    <li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
                         <a href="#0">
-                            <em class="event-name">Zumba Class</em>
+                            <em class="event-name">Abs Circuit</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="08:00" data-end="09:00" data-content="event-weight-training" data-event="event-4">
+                    <li class="single-event" data-start="12:00" data-end="13:45" data-content="event-restorative-yoga" data-event="event-4">
                         <a href="#0">
-                            <em class="event-name">Weight Training Class</em>
+                            <em class="event-name">Restorative Yoga</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="21:00" data-end="22:00" data-content="event-weight-training" data-event="event-4">
+                    <li class="single-event" data-start="15:30" data-end="16:30" data-content="event-abs-circuit" data-event="event-1">
                         <a href="#0">
-                            <em class="event-name">Weight Training Class</em>
+                            <em class="event-name">Abs Circuit</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="20:00" data-end="21:00"  data-content="event-burning-fat" data-event="event-5">
+                    <li class="single-event" data-start="17:00" data-end="18:30"  data-content="event-rowing-workout" data-event="event-2">
                         <a href="#0">
-                            <em class="event-name">Burning Fat Class</em>
+                            <em class="event-name">Rowing Workout</em>
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <!-- Friday -->
             <li class="events-group">
                 <div class="top-info"><span>Friday</span></div>
 
                 <ul>
-                    <li class="single-event" data-start="10:00" data-end="11:00"  data-content="event-pilates" data-event="event-1">
+                    <li class="single-event" data-start="10:00" data-end="11:00"  data-content="event-rowing-workout" data-event="event-2">
                         <a href="#0">
-                            <em class="event-name">Pilates Class</em>
+                            <em class="event-name">Rowing Workout</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="07:00" data-end="09:00" data-content="event-abs-circuit" data-event="event-2">
+                    <li class="single-event" data-start="12:30" data-end="14:00" data-content="event-abs-circuit" data-event="event-1">
                         <a href="#0">
-                            <em class="event-name">Kickboxing Class</em>
+                            <em class="event-name">Abs Circuit</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="09:00" data-end="10:00"  data-content="event-zumba" data-event="event-3">
+                    <li class="single-event" data-start="15:45" data-end="16:45"  data-content="event-yoga-1" data-event="event-3">
                         <a href="#0">
-                            <em class="event-name">Zumba Class</em>
-                        </a>
-                    </li>
-
-                    <li class="single-event" data-start="13:00" data-end="14:00"  data-content="event-weighttraining" data-event="event-4">
-                        <a href="#0">
-                            <em class="event-name">Weight Training Class</em>
-                        </a>
-                    </li>
-
-
-                    <li class="single-event" data-start="12:00" data-end="13:00"  data-content="event-burning-fat" data-event="event-5">
-                        <a href="#0">
-                            <em class="event-name">Burning Fat Class</em>
-                        </a>
-                    </li>
-
-                    <li class="single-event" data-start="11:00" data-end="12:00"  data-content="event-spinning" data-event="event-6">
-                        <a href="#0">
-                            <em class="event-name">Spinning Class</em>
+                            <em class="event-name">Yoga Level 1</em>
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <!-- Saturday -->
             <li class="events-group">
                 <div class="top-info"><span>Saturday</span></div>
 
                 <ul>
-                    <li class="single-event" data-start="12:00" data-end="13:00"  data-content="event-pilates" data-event="event-1">
+                    <li class="single-event" data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1">
                         <a href="#0">
-                            <em class="event-name">Pilates Class</em>
+                            <em class="event-name">Abs Circuit</em>
                         </a>
                     </li>
 
-                    <li class="single-event" data-start="17:00" data-end="19:00" data-content="event-spinning" data-event="event-6">
+                    <li class="single-event" data-start="11:00" data-end="12:30" data-content="event-rowing-workout" data-event="event-2">
                         <a href="#0">
-                            <em class="event-name">Spinning Class</em>
+                            <em class="event-name">Rowing Workout</em>
+                        </a>
+                    </li>
+
+                    <li class="single-event" data-start="14:00" data-end="15:15"  data-content="event-yoga-1" data-event="event-3">
+                        <a href="#0">
+                            <em class="event-name">Yoga Level 1</em>
                         </a>
                     </li>
                 </ul>
@@ -1351,3 +1333,4 @@
 </script>
 
 </html>
+
