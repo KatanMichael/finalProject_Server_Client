@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN" 
-"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-<session-factory>
+	<session-factory>
 		<property name="hibernate.connection.driver_class">
 			com.mysql.cj.jdbc.Driver
 		</property>
 		<property name="hibernate.connection.url">
 			jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7282848
 		</property>
-	<property name="hibernate.connection.username">sql7282848</property>
+		<property name="hibernate.connection.username">sql7282848</property>
 		<property name="hibernate.connection.password">heXAmEGVIw</property>
 		<property name="show_sql">true</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -21,5 +21,5 @@
 		<mapping resource="schedule.hbm.xml"/>
 
 
-</session-factory>
+	</session-factory>
 </hibernate-configuration>
