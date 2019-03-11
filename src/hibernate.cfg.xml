@@ -7,10 +7,10 @@
 			com.mysql.cj.jdbc.Driver
 		</property>
 		<property name="hibernate.connection.url">
-			jdbc:mysql://remotemysql.com:3306/ogeB6Tgf9c
+			jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7282848
 		</property>
-	<property name="hibernate.connection.username">ogeB6Tgf9c</property>
-		<property name="hibernate.connection.password">ifNZPnkbIX</property>
+	<property name="hibernate.connection.username">sql7282848</property>
+		<property name="hibernate.connection.password">heXAmEGVIw</property>
 		<property name="show_sql">true</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>

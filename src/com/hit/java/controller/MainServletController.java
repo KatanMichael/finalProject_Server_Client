@@ -111,6 +111,11 @@ public class MainServletController extends HttpServlet
                 }
             }
 
+            final RequestDispatcher requestDispatcher = getServletConfig()
+                    .getServletContext()
+                    .getRequestDispatcher("/HomeLogged.jsp");
+            requestDispatcher.forward(request,response);
+
             if(tempActivity != null)
             {
                 gymDAO.removeActivityById(tempActivity);
@@ -119,12 +124,6 @@ public class MainServletController extends HttpServlet
             {
                 //No activity found
             }
-
-            final RequestDispatcher requestDispatcher = getServletConfig()
-                    .getServletContext()
-                    .getRequestDispatcher("/HomeLogged.jsp");
-
-            requestDispatcher.forward(request,response);
 
         }
 
