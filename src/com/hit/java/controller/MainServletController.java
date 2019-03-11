@@ -114,7 +114,7 @@ public class MainServletController extends HttpServlet
 
             if(tempActivity != null)
             {
-                gymDAO.removeActivityById(tempActivity,null);
+                gymDAO.removeActivityById(tempActivity);
 
             }else
             {
