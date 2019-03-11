@@ -927,7 +927,6 @@
       }
       <%}%>
       return sum;
-
     };
 
   var chartColors = window.chartColors;
@@ -985,6 +984,36 @@
   };
 
   //bar chart info
+    var calcDaysGym = function(d,t) {
+      var sum2=0;
+      var y2;
+      var temp=0;
+
+      <%ArrayList<Schedule> currentUserSchedules2 = (ArrayList<Schedule>)request.getAttribute("userSchedules2");
+      for(Schedule s:currentUserSchedules2){%>
+      y2 = <%=s.getDay()%>;
+      temp = <%=s.getEnd()%>;
+      if (y2 == d) {
+        if(t==1)
+        {
+          if(temp<=12)
+          {
+            sum2++;
+          }
+        }
+        else if(t==2)
+        {
+          if(temp>12)
+          {
+            sum2++;
+          }
+        }
+
+      }
+      <%}%>
+      return sum2;
+    };
+
   var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   var color2 = Chart.helpers.color;
   var barChartData = {
@@ -995,13 +1024,13 @@
           borderColor: window.chartColors.red,
           borderWidth: 1,
           data: [
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor()
+            calcDaysGym(1,1),
+            calcDaysGym(2,1),
+            calcDaysGym(3,1),
+            calcDaysGym(4,1),
+            calcDaysGym(5,1),
+            calcDaysGym(6,1),
+            calcDaysGym(7,1)
           ]
       }, {
           label: 'Night Classes',
@@ -1009,13 +1038,13 @@
           borderColor: window.chartColors.blue,
           borderWidth: 1,
           data: [
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor()
+            calcDaysGym(1,2),
+            calcDaysGym(2,2),
+            calcDaysGym(3,2),
+            calcDaysGym(4,2),
+            calcDaysGym(5,2),
+            calcDaysGym(6,2),
+            calcDaysGym(7,2)
           ]
       }]
 
