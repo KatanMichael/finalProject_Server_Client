@@ -708,6 +708,8 @@
 <div class="cd-schedule loading">
     <div class="timeline">
         <ul>
+            <li><span>07:00</span></li>
+            <li><span>08:00</span></li>
             <li><span>09:00</span></li>
             <li><span>10:00</span></li>
             <li><span>11:00</span></li>
