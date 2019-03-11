@@ -1,6 +1,7 @@
 package com.hit.java.models;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -299,6 +300,24 @@ public class HibernateGymDAO implements IGymDAO
 
         session.close();
 
+        sessionFactory.close();
+    }
+
+    @Override
+    public void removeActivityById(Activity a)
+    {
+        sessionFactory = new AnnotationConfiguration().
+                configure().buildSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        session.delete(a);
+
+        session.getTransaction().commit();
+
+        session.close();
         sessionFactory.close();
     }
 

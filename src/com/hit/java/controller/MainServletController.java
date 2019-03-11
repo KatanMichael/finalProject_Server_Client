@@ -99,6 +99,33 @@ public class MainServletController extends HttpServlet
 
         if (path.equals("/activityRemove"))
         {
+            int scheuleId = Integer.parseInt(request.getParameter("activityID"));
+            Activity tempActivity = null;
+
+            for(Activity a: currentUserActivities)
+            {
+                if(a.getScheduleID() == scheuleId)
+                {
+                    tempActivity = a;
+                    currentUserActivities.remove(a);
+                    break;
+                }
+            }
+
+            if(tempActivity != null)
+            {
+                gymDAO.removeActivityById(tempActivity,null);
+
+            }else
+            {
+                //No activity found
+            }
+
+            final RequestDispatcher requestDispatcher = getServletConfig()
+                    .getServletContext()
+                    .getRequestDispatcher("/HomeLogged.jsp");
+
+            requestDispatcher.forward(request,response);
 
         }
 
