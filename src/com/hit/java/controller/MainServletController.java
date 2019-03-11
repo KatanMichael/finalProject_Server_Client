@@ -28,8 +28,7 @@ public class MainServletController extends HttpServlet
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
-
-
+        response.setContentType("text/html;charset=UTF-8");
 
         if(path.equals("/logout"))
         {
@@ -44,9 +43,8 @@ public class MainServletController extends HttpServlet
 
         if (path.equals("/activityAdd"))
         {
-            int activityID = Integer.parseInt(request.getParameter("activityID"));
-
-            Activity tempActivity = new Activity(currentUser.getId(),activityID);
+            int activityId = Integer.parseInt(request.getParameter("activityID"));
+            Activity tempActivity = new Activity(currentUser.getId(),activityId);
 
             gymDAO.getActivitiesByUserId(currentUser.getId(), new RequestListener()
             {
@@ -58,7 +56,7 @@ public class MainServletController extends HttpServlet
 
                     for(Activity a: listOfActivities)
                     {
-                        if(a.getScheduleID() == activityID)
+                        if(a.getScheduleID() == activityId)
                         {
                             found = true;
                             break;
@@ -67,6 +65,7 @@ public class MainServletController extends HttpServlet
                     if(!found)
                     {
                         gymDAO.addNewActivity(tempActivity);
+                        currentUserActivities.add(tempActivity);
                     }
 
                     try {

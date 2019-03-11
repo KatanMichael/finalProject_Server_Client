@@ -1,5 +1,7 @@
 <%@ page import="com.hit.java.models.HibernateGymDAO" %>
 <%@ page import="com.hit.java.models.User" %>
+<%@ page import="com.hit.java.models.Activity" %>
+<%@ page import="com.hit.java.models.Schedule" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -203,7 +205,7 @@
                                 <button type="button" class="btn btn-outline-success dropdown-toggle"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                  <i class="fas fa-check"></i>
-                                 Yes
+                                 Add Classes
                                 </button>
 
                                 <div class="dropdown-menu">
@@ -239,7 +241,7 @@
                           <div class="btn-group">
                             <button type="button" class="btn btn-outline-secondary dropdown-toggle"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fas fa-check"></i>
+                              <i class="fas fa-minus"></i>
                               Remove Classes
                             </button>
 
@@ -276,7 +278,7 @@
 
                                 <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
                                     <i class="fas fa-times"></i>
-                                    No</button>
+                                    Close</button>
                             </p>
                             <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/01-full.jpg" alt="">
 
@@ -309,7 +311,7 @@
                 <button type="button" class="btn btn-outline-success dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-check"></i>
-                  Yes
+                  Add Classes
                 </button>
 
                 <div class="dropdown-menu">
@@ -332,9 +334,36 @@
                 </div>
               </div>
 
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-minus"></i>
+                  Remove Classes
+                </button>
+
+                <div class="dropdown-menu">
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="6" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Sunday 12-1pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="7" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Wednesday 10-12am</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="8" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Friday 7-9am</button>
+                  </form>
+
+                </div>
+              </div>
+
               <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
-                No</button>
+                Close</button>
               </p>
 
               <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/02-full.jpg" alt="">
@@ -368,7 +397,7 @@
                 <button type="button" class="btn btn-outline-success dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-check"></i>
-                  Yes
+                  Add Classes
                 </button>
 
                 <div class="dropdown-menu">
@@ -400,9 +429,45 @@
                 </div>
               </div>
 
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-minus"></i>
+                  Remove Classes
+                </button>
+
+                <div class="dropdown-menu">
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="9" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Sunday 8-10pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="10" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Monday 8-10pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="11" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Tuesday 12-2pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="12" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Thursday 11-1pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="13" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Friday 9-10am</button>
+                  </form>
+                </div>
+              </div>
+
               <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
-                No</button>
+                Close</button>
               </p>
 
               <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/03-full.jpg" alt="">
@@ -432,11 +497,13 @@
               <h2 class="text-uppercase">Weight Training Class</h2>
               <p class="item-intro text-muted">Sign up for Weight Training ?
 
+
+
               <div class="btn-group">
                 <button type="button" class="btn btn-outline-success dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-check"></i>
-                  Yes
+                  Add Classes
                 </button>
 
               <div class="dropdown-menu">
@@ -460,19 +527,49 @@
                   <button type="submit" class="dropdown-item">Friday 1-2pm</button>
                 </form>
               </div>
+            </div>
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-minus"></i>
+                  Remove Classes
+                </button>
+
+                <div class="dropdown-menu">
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="14" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Monday 11-1pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="15" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Thursday 8-9am</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="16" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Thursday 9-10pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="17" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Friday 1-2pm</button>
+                  </form>
+                </div>
+              </div>
 
               <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
-                No</button>
+                Close</button>
             </div>
               </p>
               <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/04-full.jpg" alt="">
             </div>
           </div>
-        </div>
+      </div>
       </div>
     </div>
-  </div>
 </div>
 
 <!-- Modal 5 -->
@@ -496,7 +593,7 @@
                 <button type="button" class="btn btn-outline-success dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-check"></i>
-                  Yes
+                  Add Classes
                 </button>
 
                 <div class="dropdown-menu">
@@ -519,9 +616,36 @@
                 </div>
               </div>
 
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-minus"></i>
+                  Remove Classes
+                </button>
+
+                <div class="dropdown-menu">
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="18" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Tuesday 8-10am</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="19" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Thursday 8-9pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="20" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Friday 12-1pm</button>
+                  </form>
+
+                </div>
+              </div>
+
               <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
-                No</button>
+                Close</button>
               </p>
 
               <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/05-full.jpg" alt="">
@@ -555,7 +679,7 @@
                 <button type="button" class="btn btn-outline-success dropdown-toggle"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-check"></i>
-                  Yes
+                  Add Classes
                 </button>
 
                 <div class="dropdown-menu">
@@ -583,9 +707,42 @@
                 </div>
               </div>
 
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-minus"></i>
+                  Remove Classes
+                </button>
+
+                <div class="dropdown-menu">
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="21" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Tuesday 8-10pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="22" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Wednesday 4-6pm</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="23" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Friday 11-12am</button>
+                  </form>
+
+                  <form action="${pageContext.request.contextPath}/controller/activityRemove" method="post">
+                    <input class="form-control" name="activityID" type="hidden" value="24" aria-hidden="true"/>
+                    <button type="submit" class="dropdown-item">Saturday 5-7pm</button>
+                  </form>
+
+                </div>
+              </div>
+
+
               <button class="btn btn-outline-danger" data-dismiss="modal" type="button">
                 <i class="fas fa-times"></i>
-                No</button>
+                Close</button>
               </p>
 
               <img class="img-fluid d-block mx-auto" src="${pageContext.request.contextPath}/img/portfolio/06-full.png" alt="">
@@ -601,12 +758,12 @@
 
 
 <!-- Calendar Grid, doesn't work now -->
-<section class="bg-light" id="portfolioCalendar">
+<section class="bg-light" id="portfolio">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">Your Weekly calendar</h2>
-        <h3 class="section-subheading text-muted"> See your classes on a timeline </h3>
+        <h2 class="section-heading text-uppercase">Gym Weekly calendar</h2>
+        <h3 class="section-subheading text-muted"> See our classes on a timeline </h3>
       </div>
     </div>
 
